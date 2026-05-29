@@ -1,0 +1,16 @@
+{
+  "name": "aria-vance-portfolio",
+  "version": "1.0.0",
+  "description": "Sleek, creative developer & designer portfolio website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y browser-sync start --server --files \"*.html, *.css, *.js, assets/*\""
+  },
+  "keywords": [
+    "portfolio",
+    "glassmorphism",
+    "interactive"
+  ],
+  "author": "Aria Vance",
+  "license": "ISC"
+}

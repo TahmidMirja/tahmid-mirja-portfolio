@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Tahmid Mirja | AI Automation & AI Agent Developer</title>
+    <meta name="description" content="Portfolio of Tahmid Mirja, an AI Automation & AI Agent Developer helping businesses eliminate repetitive work, integrate LLMs, and scale intelligently.">
+    <meta name="keywords" content="AI Agent, Business Automation, n8n Developer, LangChain, Zapier, Chatbot Developer, Voice AI Agent, RAG Systems">
+    <meta name="author" content="Tahmid Mirja">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tahmid Mirja | AI Automation & AI Agent Developer">
+    <meta property="og:description" content="Helping businesses growing faster, saving time, and cutting costs through custom AI systems.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+    <div class="custom-cursor-outline" id="cursor-outline"></div>
+
+    <!-- Header / Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" id="nav-logo">
+                TM<span>_</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#architecture" class="nav-link">Blueprints</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="https://wa.me/8801402407620?text=Hi%20Tahmid,%20I'd%20like%20to%20discuss%20an%20automation%20project%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary nav-cta-btn">
+                    Hire Me <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="nav-btn-icon mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Mobile Menu">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                    <i data-lucide="x" class="close-icon hidden"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="grid-overlay"></div>
+            <div class="glow-orb glow-orb-1"></div>
+            <div class="glow-orb glow-orb-2"></div>
+            
+            <div class="hero-content">
+                <div class="hero-tagline hover-scale">
+                    <span class="pulsing-dot"></span> Open for Projects · Remote · Global
+                </div>
+                <h1 class="hero-title">
+                    Tahmid Mirja
+                </h1>
+                
+                <div class="hero-subtitle-container">
+                    <span id="typewriter-text" class="accent-text">AI Automation & AI Agent Developer</span>
+                </div>
+                
+                <p class="hero-desc-line">
+                    Automate, grow fast, or scale your business with custom integrations.
+                </p>
+                <p class="hero-one-liner">
+                    5 real client projects. Healthcare. E-commerce. Voice AI.
+                </p>
+                
+                <div class="hero-ctas-wrapper">
+                    <div class="hero-ctas">
+                        <a href="https://wa.me/8801402407620?text=Hi%20Tahmid,%20I'd%20like%20to%20book%20a%20free%2015-minute%20automation%20consultation%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary hover-magnetic">
+                            Book Free 15-Min Automation Consultation <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                        </a>
+                        <a href="#projects" class="btn btn-secondary hover-magnetic">
+                            See My Work
+                        </a>
+                    </div>
+                    
+
+                </div>
+                
+                <!-- Social Icon Row - Custom Inline SVGs for perfect visibility -->
+                <div class="hero-socials-row">
+                    <a href="https://www.linkedin.com/in/tahmidmirja/" target="_blank" rel="noopener" class="social-icon-btn" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://github.com/TahmidMirja" target="_blank" rel="noopener" class="social-icon-btn" title="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                    </a>
+                    <a href="mailto:tahmidmirja25@gmail.com" class="social-icon-btn" title="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    </a>
+                    <a href="tel:01402407620" class="social-icon-btn" title="Phone">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-scroll-indicator" id="hero-scroll">
+                <i data-lucide="chevron-down" class="bouncing-chevron"></i>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section section-padding" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">01 / OVERVIEW</span>
+                    <h2 class="section-title">Who Is Tahmid?</h2>
+                </div>
+                
+                <div class="about-grid-new">
+                    <!-- Left: Profile Photo / AI Automation Vector Graphic -->
+                    <div class="about-photo-wrapper glass-card reveal-fade">
+                        <img src="assets/tahmid_ai_automation_graphic.png" alt="Tahmid Mirja - AI Automation Specialist" class="about-photo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="about-photo-placeholder" style="display: none;">
+                            <i data-lucide="camera" class="placeholder-icon"></i>
+                            <span>Photo Placeholder</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Story text -->
+                    <div class="about-info-wrapper reveal-fade">
+                        <div class="about-story-text">
+                            <p>
+                                I'm Tahmid Mirja — an AI Agent Developer & AI Automation Specialist who helps businesses eliminate repetitive work and scale intelligently. I design, build, and deploy production-ready AI systems using tools like n8n, LangChain, Langflow, Zapier, ElevenLabs, and more.
+                            </p>
+                            <p>
+                                I've delivered 5 production projects across healthcare and e-commerce — from AI chatbots and voice agents to full appointment automation systems. If your business has a repetitive process, I can automate it.
+                            </p>
+                        </div>
+                        
+                        <!-- 4 Animated Stats Cards -->
+                        <div class="stats-grid-new">
+                            <div class="stat-card glass-card">
+                                <span class="stat-num">5+</span>
+                                <span class="stat-label">Client Projects Delivered</span>
+                            </div>
+                            <div class="stat-card glass-card">
+                                <span class="stat-num">2</span>
+                                <span class="stat-label">Industries: Healthcare & E-commerce</span>
+                            </div>
+                            <div class="stat-card glass-card">
+                                <span class="stat-num">12+</span>
+                                <span class="stat-label">Tools Mastered</span>
+                            </div>
+                            <div class="stat-card glass-card">
+                                <span class="stat-num">100%</span>
+                                <span class="stat-label">Remote · Global Clients</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Before vs After ROI Section -->
+        <section class="roi-section section-padding" id="roi">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">02 / ROI MATRIX</span>
+                    <h2 class="section-title">Before vs. After Business Metrics</h2>
+                    <p class="section-intro-text">
+                        SaaS-style ROI matrix showing how custom integrations and workflows convert manual bottlenecks into automated growth.
+                    </p>
+                </div>
+                
+                <div class="roi-container-new reveal-fade">
+                    <!-- Project ROI 1: Chatbot -->
+                    <div class="roi-row-card glass-card">
+                        <div class="roi-card-header-new">
+                            <div class="roi-header-info">
+                                <span class="roi-category-tag">E-Commerce & Support</span>
+                                <h3>Dental Clinic AI Chatbot</h3>
+                            </div>
+                            <div class="roi-overall-metric">
+                                <span class="metric-desc">Triage Automation</span>
+                                <strong class="metric-num-highlight">100%</strong>
+                            </div>
+                        </div>
+                        
+                        <div class="roi-comparison-grid">
+                            <!-- Before Panel -->
+                            <div class="roi-panel panel-before">
+                                <div class="panel-state-header">
+                                    <span class="status-marker marker-red"></span>
+                                    <h4>🔴 Manual Before</h4>
+                                </div>
+                                <p class="panel-desc">Front-desk workload bottlenecks and unanswered patient messages after 10:00 PM.</p>
+                                <div class="roi-visual-metric">
+                                    <div class="metric-progress-header">
+                                        <span>Patient Query Response Rate</span>
+                                        <strong>35%</strong>
+                                    </div>
+                                    <div class="metric-progress-bg">
+                                        <div class="metric-progress-fill fill-red" style="width: 35%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Middle Flow Indicator -->
+                            <div class="roi-flow-connector">
+                                <div class="connector-line-glow"></div>
+                                <div class="connector-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-right"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                                </div>
+                            </div>
+                            
+                            <!-- After Panel -->
+                            <div class="roi-panel panel-after">
+                                <div class="panel-state-header">
+                                    <span class="status-marker marker-green"></span>
+                                    <h4>🟢 AI Automated After</h4>
+                                </div>
+                                <p class="panel-desc">24/7 instant patient triage, zero missed leads, and automated booking scheduling.</p>
+                                <div class="roi-visual-metric">
+                                    <div class="metric-progress-header">
+                                        <span>Patient Query Response Rate</span>
+                                        <strong>100%</strong>
+                                    </div>
+                                    <div class="metric-progress-bg">
+                                        <div class="metric-progress-fill fill-green" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project ROI 2: Booking System -->
+                    <div class="roi-row-card glass-card">
+                        <div class="roi-card-header-new">
+                            <div class="roi-header-info">
+                                <span class="roi-category-tag">Operations & CRM</span>
+                                <h3>Clinic Appointment Booking System</h3>
+                            </div>
+                            <div class="roi-overall-metric">
+                                <span class="metric-desc">Hours Saved</span>
+                                <strong class="metric-num-highlight">15h/wk</strong>
+                            </div>
+                        </div>
+                        
+                        <div class="roi-comparison-grid">
+                            <!-- Before Panel -->
+                            <div class="roi-panel panel-before">
+                                <div class="panel-state-header">
+                                    <span class="status-marker marker-red"></span>
+                                    <h4>🔴 Manual Before</h4>
+                                </div>
+                                <p class="panel-desc">Hours spent manually calling patients, coordinating shifts, and typing reminders.</p>
+                                <div class="roi-visual-metric">
+                                    <div class="metric-progress-header">
+                                        <span>Time Spent Scheduling</span>
+                                        <strong>12 Hours / Week</strong>
+                                    </div>
+                                    <div class="metric-progress-bg">
+                                        <div class="metric-progress-fill fill-red" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Middle Flow Indicator -->
+                            <div class="roi-flow-connector">
+                                <div class="connector-line-glow"></div>
+                                <div class="connector-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-right"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                                </div>
+                            </div>
+                            
+                            <!-- After Panel -->
+                            <div class="roi-panel panel-after">
+                                <div class="panel-state-header">
+                                    <span class="status-marker marker-green"></span>
+                                    <h4>🟢 AI Automated After</h4>
+                                </div>
+                                <p class="panel-desc">End-to-end automated scheduling pipeline. Customers self-book with instant WhatsApp confirmations.</p>
+                                <div class="roi-visual-metric">
+                                    <div class="metric-progress-header">
+                                        <span>Time Spent Scheduling</span>
+                                        <strong>0 Hours (Auto-Pilot)</strong>
+                                    </div>
+                                    <div class="metric-progress-bg">
+                                        <div class="metric-progress-fill fill-green" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project ROI 3: Shopify Manager -->
+                    <div class="roi-row-card glass-card">
+                        <div class="roi-card-header-new">
+                            <div class="roi-header-info">
+                                <span class="roi-category-tag">Catalog Sync & Logistics</span>
+                                <h3>Shopify Product Management Automation</h3>
+                            </div>
+                            <div class="roi-overall-metric">
+                                <span class="metric-desc">Data Entry Errors</span>
+                                <strong class="metric-num-highlight">0%</strong>
+                            </div>
+                        </div>
+                        
+                        <div class="roi-comparison-grid">
+                            <!-- Before Panel -->
+                            <div class="roi-panel panel-before">
+                                <div class="panel-state-header">
+                                    <span class="status-marker marker-red"></span>
+                                    <h4>🔴 Manual Before</h4>
+                                </div>
+                                <p class="panel-desc">Manual catalog data typing errors and delayed inventory updates across channels.</p>
+                                <div class="roi-visual-metric">
+                                    <div class="metric-progress-header">
+                                        <span>Inventory Update Sync Time</span>
+                                        <strong>4-6 Hours Delay</strong>
+                                    </div>
+                                    <div class="metric-progress-bg">
+                                        <div class="metric-progress-fill fill-red" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Middle Flow Indicator -->
+                            <div class="roi-flow-connector">
+                                <div class="connector-line-glow"></div>
+                                <div class="connector-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-right"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                                </div>
+                            </div>
+                            
+                            <!-- After Panel -->
+                            <div class="roi-panel panel-after">
+                                <div class="panel-state-header">
+                                    <span class="status-marker marker-green"></span>
+                                    <h4>🟢 AI Automated After</h4>
+                                </div>
+                                <p class="panel-desc">Real-time database triggers sync changes to Shopify instantly, checking catalog integrity.</p>
+                                <div class="roi-visual-metric">
+                                    <div class="metric-progress-header">
+                                        <span>Inventory Update Sync Time</span>
+                                        <strong>Instant (&lt; 2 seconds)</strong>
+                                    </div>
+                                    <div class="metric-progress-bg">
+                                        <div class="metric-progress-fill fill-green" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section class="tech-section section-padding" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">03 / SKILLS</span>
+                    <h2 class="section-title">My Tech Stack</h2>
+                    <p class="section-intro-text">The exact tools I use to build your automation system</p>
+                </div>
+                
+                <div class="tech-grid reveal-fade">
+                    <!-- Category 1 -->
+                    <div class="tech-category-card glass-card">
+                        <div class="tech-card-header">
+                            <i data-lucide="git-branch" class="tech-cat-icon"></i>
+                            <h3>Automation Platforms</h3>
+                        </div>
+                        <div class="skills-list">
+                            <span class="skill-badge">n8n</span>
+                            <span class="skill-badge">Zapier</span>
+                            <span class="skill-badge">Make (Integromat)</span>
+                            <span class="skill-badge">GoHighLevel</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 2 -->
+                    <div class="tech-category-card glass-card">
+                        <div class="tech-card-header">
+                            <i data-lucide="brain" class="tech-cat-icon"></i>
+                            <h3>AI & Agent Frameworks</h3>
+                        </div>
+                        <div class="skills-list">
+                            <span class="skill-badge">LangChain</span>
+                            <span class="skill-badge">Langflow</span>
+                            <span class="skill-badge">OpenAI API</span>
+                            <span class="skill-badge">ElevenLabs</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 3 -->
+                    <div class="tech-category-card glass-card">
+                        <div class="tech-card-header">
+                            <i data-lucide="database" class="tech-cat-icon"></i>
+                            <h3>Integration & Deployment</h3>
+                        </div>
+                        <div class="skills-list">
+                            <span class="skill-badge">Voice AI</span>
+                            <span class="skill-badge">API Integration</span>
+                            <span class="skill-badge">Prompt Engineering</span>
+                            <span class="skill-badge">RAG Systems</span>
+                            <span class="skill-badge">Google Workspace Studio AI</span>
+                            <span class="skill-badge">Vercel</span>
+                            <span class="skill-badge">Render</span>
+                            <span class="skill-badge">DigitalOcean</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section section-padding" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">04 / PROJECTS</span>
+                    <h2 class="section-title">Real Projects. Real Clients. Real Results.</h2>
+                    <p class="section-intro-text">Every project below was built for an actual client or production deployment.</p>
+                </div>
+                
+                <!-- Projects Grid - Text-based, Clean, High-contrast design -->
+                <div class="projects-grid-text reveal-fade">
+                    
+                    <!-- Project 1 -->
+                    <div class="project-text-card glass-card">
+                        <div class="project-text-header">
+                            <span class="project-text-cat">Healthcare</span>
+                            <h3>Dental Clinic AI Chatbot</h3>
+                        </div>
+                        <p class="project-text-desc">Built a conversational AI chatbot for a dental clinic that handles patient queries 24/7, eliminates front-desk bottlenecks, and improves response time for appointment inquiries.</p>
+                        
+                        <div class="project-text-outcomes">
+                            <h4>Outcomes:</h4>
+                            <ul>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="outcome-check"><polyline points="20 6 9 17 4 12"/></svg> Reduced front-desk workload</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="outcome-check"><polyline points="20 6 9 17 4 12"/></svg> 24/7 patient response</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="outcome-check"><polyline points="20 6 9 17 4 12"/></svg> Zero missed queries</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-text-card glass-card">
+                        <div class="project-text-header">
+                            <span class="project-text-cat">Healthcare</span>
+                            <h3>Clinic Appointment Booking System</h3>
+                        </div>
+                        <p class="project-text-desc">Replaced manual appointment booking at a medical clinic with an AI-driven automation system handling scheduling, confirmations, and reminders.</p>
+                        
+                        <div class="project-text-outcomes">
+                            <h4>Outcomes:</h4>
+                            <ul>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="outcome-check"><polyline points="20 6 9 17 4 12"/></svg> Zero manual booking</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="outcome-check"><polyline points="20 6 9 17 4 12"/></svg> Fully automated scheduling pipeline</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-text-card glass-card">
+                        <div class="project-text-header">
+                            <span class="project-text-cat">E-commerce</span>
+                            <h3>Shopify Product Management Automation</h3>
+                        </div>
+                        <p class="project-text-desc">Automated product management workflows for a Shopify store including inventory syncing and data automation.</p>
+                        
+                        <div class="project-text-outcomes">
+                            <h4>Outcomes:</h4>
+                            <ul>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="outcome-check"><polyline points="20 6 9 17 4 12"/></svg> Eliminated manual data entry</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="outcome-check"><polyline points="20 6 9 17 4 12"/></svg> Real-time inventory sync</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="outcome-check"><polyline points="20 6 9 17 4 12"/></svg> Hours saved daily</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-text-card glass-card">
+                        <div class="project-text-header">
+                            <span class="project-text-cat">Voice AI</span>
+                            <h3>Voice AI Agent</h3>
+                        </div>
+                        <p class="project-text-desc">Built a real-time voice-enabled AI agent capable of natural human-like conversation.</p>
+                        
+                        <div class="project-text-outcomes">
+                            <h4>Outcomes:</h4>
+                            <ul>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="outcome-check"><polyline points="20 6 9 17 4 12"/></svg> Natural AI voice conversations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-text-card glass-card">
+                        <div class="project-text-header">
+                            <span class="project-text-cat">AI Agent</span>
+                            <h3>Production-Ready Personal AI Agent</h3>
+                        </div>
+                        <p class="project-text-desc">Designed and deployed a scalable production-ready personal AI agent with custom integrations and persistent memory.</p>
+                        
+                        <div class="project-text-outcomes">
+                            <h4>Outcomes:</h4>
+                            <ul>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="outcome-check"><polyline points="20 6 9 17 4 12"/></svg> Production deployed</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="outcome-check"><polyline points="20 6 9 17 4 12"/></svg> Scalable</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="outcome-check"><polyline points="20 6 9 17 4 12"/></svg> Real-world ready</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Training Projects Section -->
+                <div class="training-projects-wrapper">
+                    <h3>Training / Course Projects</h3>
+                    <div class="training-tags-container">
+                        <span class="training-tag">Email Automation Agent</span>
+                        <span class="training-tag">Social Media Content Generator</span>
+                        <span class="training-tag">Customer Support Q&A Bot with RAG</span>
+                        <span class="training-tag">Market Research Multi-Agent System</span>
+                        <span class="training-tag">Stock Analysis Agent</span>
+                        <span class="training-tag">Multilingual Customer Support Bot</span>
+                        <span class="training-tag">Website Lead Generation SaaS</span>
+                        <span class="training-tag">E-Commerce Chatbot Integration</span>
+                        <span class="training-tag">Voice-Enabled Appointment Scheduler</span>
+                        <span class="training-tag">Facebook Messenger Full Automation</span>
+                        <span class="training-tag">CRM Business Lead Automation</span>
+                        <span class="training-tag">WordPress Blog Automation</span>
+                        <span class="training-tag">AI Invoice Automation System</span>
+                        <span class="training-tag">Voice-Enabled Live Calling Agent</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
+        <section class="experience-section section-padding" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">05 / TIMELINE</span>
+                    <h2 class="section-title">Work & Growth</h2>
+                </div>
+                
+                <div class="timeline reveal-fade">
+                    <div class="timeline-line"></div>
+                    
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024 - Present</div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-role">Management Director & Lead Engineer</span>
+                            <span class="timeline-company">Dipty</span>
+                            <p>Lead AI development operations, own technical decisions, and deliver custom automation pipelines for global business clients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Production-Ready Architecture Blueprint (n8n Workflow Case Study) -->
+        <section class="architecture-section section-padding" id="architecture">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">06 / BLUEPRINT</span>
+                    <h2 class="section-title">n8n Intent-Based Router & Vector RAG Pipeline</h2>
+                    <p class="section-intro-text">
+                        A real n8n backend workflow designed and built by Tahmid. Try the interactive simulator below to trace how data flows through the agent system in real-time, or hover over nodes to view credentials and prompt parameters.
+                    </p>
+                </div>
+                
+                <!-- n8n Workflow Dashboard Container -->
+                <div class="n8n-dashboard glass-card reveal-fade">
+                    <!-- n8n Top Tool Menu -->
+                    <div class="n8n-top-menu">
+                        <div class="n8n-window-dots">
+                            <span class="dot-red"></span>
+                            <span class="dot-yellow"></span>
+                            <span class="dot-green"></span>
+                        </div>
+                        <div class="n8n-workflow-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-branch"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+                            <span>smart_business_router_v2.json</span>
+                        </div>
+                        <div class="n8n-controls">
+                            <span class="n8n-zoom-badge">100%</span>
+                            <span class="n8n-status-badge"><span class="pulsing-green-dot"></span> Active</span>
+                        </div>
+                       <!-- Disclaimer Warning Banner -->
+                    <div class="n8n-disclaimer-banner">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="disclaimer-icon lucide lucide-alert-circle"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        <span>This is a simplified prototype demo of a single customer support agent. Production systems are <strong>100x+ more complex</strong> with multi-agent swarms, dynamic router structures, and full fail-safes.</span>
+                    </div>
+
+                    <!-- Simulator Trigger Bar -->
+                    <div class="n8n-simulator-bar">
+                        <span class="sim-label">⚡ RUN SIMULATION:</span>
+                        <div class="sim-buttons">
+                            <button class="sim-btn btn-chat" id="sim-btn-chat">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                Customer Support Chat
+                            </button>
+                            <button class="sim-btn btn-collab" id="sim-btn-collab">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake"><path d="m11 17 2 2a1 1 0 0 0 1.4 0l4-4a1 1 0 0 0 0-1.4l-2-2"/><path d="m18 10.1 2.9-2.9a1 1 0 0 0 0-1.4l-2.6-2.6a1 1 0 0 0-1.4 0L14 6.1"/><path d="m18 19 1-1a2.8 2.8 0 1 0-4-4l-1 1"/><path d="M14 6.1 10 10.1 4 4.1a1 1 0 0 0-1.4 0L1.3 5.4a1 1 0 0 0 0 1.4L6 11.5l-4 4L1 18.2a2.8 2.8 0 1 0 4 4l2.7-2.7 4-4 4-4"/></svg>
+                                Business Lead Inquiry
+                            </button>
+                            <button class="sim-btn btn-ingest" id="sim-btn-ingest">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload-cloud"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m15 15-3-3-3 3"/></svg>
+                                Ingest PDF Document
+                            </button>
+                            <button class="sim-btn btn-error" id="sim-btn-error">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-triangle"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                System Error (Fail-Safe)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Main Canvas & Inspector Layout -->
+                    <div class="n8n-workspace">
+                        <!-- Workflow Canvas -->
+                        <div class="n8n-canvas" id="n8n-canvas">
+                            <div class="n8n-grid-pattern"></div>
+                            <svg class="n8n-svg-connections" id="n8n-svg-connections"></svg>
+                            
+                            <!-- Column 1: Triggers -->
+                            <div class="n8n-col">
+                                <div class="n8n-col-header">1. INBOUND TRIGGERS</div>
+                                
+                                <div class="blueprint-node node-purple" id="node-chat-trigger" data-node="chat-trigger">
+                                    <div class="node-tag">Trigger</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                    </div>
+                                    <h4>Chat Trigger</h4>
+                                    <p class="node-type-name">chatTrigger v1.4</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+
+                                <div class="blueprint-node node-purple" id="node-form-trigger" data-node="form-trigger">
+                                    <div class="node-tag">Trigger</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                                    </div>
+                                    <h4>Form Trigger</h4>
+                                    <p class="node-type-name">formTrigger v2.5</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+                            </div>
+
+                            <!-- Column 2: Classifiers & Extractors -->
+                            <div class="n8n-col">
+                                <div class="n8n-col-header">2. PROCESSING ENGINE</div>
+                                
+                                <div class="blueprint-node node-cyan" id="node-classifier" data-node="classifier">
+                                    <div class="node-tag">Router</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-split"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.828L3 3"/><path d="m21 3-7.828 7.828A4 4 0 0 0 12 13.7"/></svg>
+                                    </div>
+                                    <h4>Text Classifier</h4>
+                                    <p class="node-type-name">textClassifier v1.1</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+
+                                <div class="blueprint-node node-cyan" id="node-extractor" data-node="extractor">
+                                    <div class="node-tag">Extract</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                                    </div>
+                                    <h4>File Extractor</h4>
+                                    <p class="node-type-name">extractFromFile v1.1</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+                            </div>
+
+                            <!-- Column 3: LangChain Agents -->
+                            <div class="n8n-col">
+                                <div class="n8n-col-header">3. COGNITIVE AGENTS</div>
+                                
+                                <div class="blueprint-node node-orange" id="node-rag-agent" data-node="rag-agent">
+                                    <div class="node-tag">Support AI</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot"><rect width="18" height="10" x="3" y="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
+                                    </div>
+                                    <h4>Support Agent</h4>
+                                    <p class="node-type-name">langchain.agent v3.1</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+
+                                <div class="blueprint-node node-orange" id="node-lead-agent" data-node="lead-agent">
+                                    <div class="node-tag">Lead AI</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-signature"><path d="M20 19.5v.5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8.5L20 7.5V15"/><path d="M14 2v6h6"/><path d="M16.4 13.5a1.86 1.86 0 0 1 0 2.6L12 20.5 8 21.5l1-4 4.4-4.4a1.86 1.86 0 0 1 2.6 0z"/></svg>
+                                    </div>
+                                    <h4>Lead Agent</h4>
+                                    <p class="node-type-name">langchain.agent v3.1</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+                            </div>
+
+                            <!-- Column 4: End Target Outputs & Database -->
+                            <div class="n8n-col">
+                                <div class="n8n-col-header">4. DATA STORES & ACTIONS</div>
+                                
+                                <div class="blueprint-node node-emerald" id="node-pinecone-db" data-node="pinecone-db">
+                                    <div class="node-tag">Vector DB</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+                                    </div>
+                                    <h4>Pinecone Store</h4>
+                                    <p class="node-type-name">vectorStorePinecone v1.3</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+
+                                <div class="blueprint-node node-emerald" id="node-gmail" data-node="gmail">
+                                    <div class="node-tag">Gmail</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                    </div>
+                                    <h4>Gmail Dispatch</h4>
+                                    <p class="node-type-name">gmail v2.2</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+
+                                <div class="blueprint-node node-red" id="node-failsafe" data-node="failsafe">
+                                    <div class="node-tag">Fail-safe</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12" y2="16"/></svg>
+                                    </div>
+                                    <h4>Emergency Alert</h4>
+                                    <p class="node-type-name">Global Fallback Watchdog</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar Node Inspector Panel -->
+                        <div class="n8n-inspector" id="n8n-inspector">
+                            <div class="inspector-header">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                                <span>Parameter Inspector</span>
+                            </div>
+                            <div class="inspector-body" id="inspector-body">
+                                <div class="inspector-placeholder">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mouse-pointer-click"><path d="m9 9 5 12 1.77-4.51L20 18l-2-4.23L22 12l-12-3Z"/><path d="M3 3v.01"/><path d="M8 3v.01"/><path d="M13 3v.01"/><path d="M18 3v.01"/><path d="M3 8v.01"/><path d="M3 13v.01"/><path d="M3 18v.01"/></svg>
+                                    <p>Hover over any node in the canvas layout to inspect its credentials, system prompts, and configuration variables.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bangla/English System Mechanism Brief Explanation -->
+                <div class="blueprint-explanation-container glass-card">
+                    <div class="blueprint-explanation-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        <h3>সিস্টেম মেকানিজম ও কাজের ধরণ (Workflow Operations)</h3>
+                    </div>
+                    <div class="blueprint-explanation-grid">
+                        <div class="explanation-col">
+                            <h4>১. কাস্টমার সাপোর্ট এবং ইনফো সার্ভিস ( RAG Support Flow )</h4>
+                            <p>
+                                যখন কোনো কাস্টমার ওয়েবসাইট বা মেসেঞ্জারে প্রশ্ন জিজ্ঞাসা করে, তখন <strong>Text Classifier</strong> জিপিটি-৪.১-মিনি মডেল ব্যবহার করে মেসেজটি <code>CUSTOMER_SUPPORT AI</code> ক্যাটাগরিতে সনাক্ত করে। এরপর <strong>Support AI Agent</strong> অ্যাক্টিভেট হয়, যা Pinecone Vector Database থেকে কাস্টমার ইনকোয়ারি রিলেটেড সঠিক তথ্য রিট্রিভ করে এবং বাড়তি কোনো মনগড়া বা ভুল কথা না বলে নিখুঁত উত্তর প্রদান করে।
+                            </p>
+                        </div>
+                        <div class="explanation-col">
+                            <h4>২. বিজনেস প্রস্তাব এবং ডিল লিড ম্যানেজমেন্ট ( Lead Dispatch Flow )</h4>
+                            <p>
+                                কোনো পার্টনারশিপ বা বিজনেস প্রস্তাব সংক্রান্ত মেসেজ আসলে (যেমন: <em>"আমরা আপনার সাথে কাজ করতে চাই"</em>), সিস্টেম তাকে <code>business_team</code> ক্যাটাগরিতে ক্লাসিফাই করে। <strong>Lead Agent</strong> তাৎক্ষণিকভাবে মেসেজের সারাংশ দিয়ে একটি প্রফেশনাল ইমেইল সাবজেক্ট ও বডি তৈরি করে এবং Gmail ইন্টিগ্রেশনের মাধ্যমে সরাসরি ওনারকে অ্যালার্ট পাঠায়।
+                            </p>
+                        </div>
+                        <div class="explanation-col">
+                            <h4>৩. গ্লোবাল এরর ফেইল-সেফ ওয়াচডগ ( Global Emergency Fail-Safe )</h4>
+                            <p>
+                                কোনো এপিআই রিকোয়েস্ট ফেইল করলে বা লিমিট অতিক্রম হলে যাতে বিজনেসের অপারেশন ব্যাহত না হয়, সেজন্য সিস্টেমে একটি ডেডিকেটেড <strong>Emergency Alert</strong> watchdog নোড রয়েছে। কোনো এরর হওয়া মাত্র এটি একটি ট্রাই-মেকানিজম এক্সিকিউট করে ব্যর্থ রিকোয়েস্ট উদ্ধার করে এবং সাথে সাথে WhatsApp ও Telegram এর মাধ্যমে ওনারকে ইমার্জেন্সি এলার্ট পাঠিয়ে দেয়।
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section section-padding" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">07 / SOLUTIONS</span>
+                    <h2 class="section-title">What I Can Build For You</h2>
+                    <p class="section-intro-text">You need a solution. I build it. Custom, fast, and production-ready.</p>
+                    <p class="services-sub-intro">Every business has repetitive work that shouldn’t require human time. Tell me yours — I’ll automate it with AI.</p>
+                </div>
+                
+                <!-- Filters -->
+                <div class="services-filters">
+                    <button class="service-filter-btn active" data-service-cat="all">All Solutions</button>
+                    <button class="service-filter-btn" data-service-cat="conversational">Chatbots & Voice AI</button>
+                    <button class="service-filter-btn" data-service-cat="workflow">Workflow & CRM</button>
+                    <button class="service-filter-btn" data-service-cat="rag">RAG & Custom Agents</button>
+                </div>
+                
+                <!-- Services Grid -->
+                <div class="services-grid reveal-fade" id="services-grid">
+                    
+                    <!-- Service 1 -->
+                    <div class="service-card glass-card" data-service-category="conversational">
+                        <i data-lucide="message-square" class="service-icon"></i>
+                        <h3>Website Chatbot</h3>
+                        <p>A 24/7 AI chatbot on your site that answers questions, qualifies leads, and book meetings without human intervention.</p>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="service-card glass-card" data-service-category="conversational">
+                        <i data-lucide="message-circle" class="service-icon"></i>
+                        <h3>WhatsApp AI Automation</h3>
+                        <p>Automate your WhatsApp customer flows with smart conversational logic and automated scheduler hooks.</p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card glass-card" data-service-category="conversational">
+                        <i data-lucide="facebook" class="service-icon"></i>
+                        <h3>Messenger AI Automation</h3>
+                        <p>Full Facebook Messenger business automations for instant direct messages, FAQs, and lead routing.</p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-card glass-card" data-service-category="conversational">
+                        <i data-lucide="instagram" class="service-icon"></i>
+                        <h3>Instagram DM Automation</h3>
+                        <p>Auto-respond to Instagram direct messages, comments, and story tags with AI integration.</p>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="service-card glass-card" data-service-category="conversational">
+                        <i data-lucide="phone-incoming" class="service-icon"></i>
+                        <h3>AI Inbound Calls</h3>
+                        <p>Conversational voice agents answering incoming calls, resolving queries, and logging client tickets instantly.</p>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="service-card glass-card" data-service-category="conversational">
+                        <i data-lucide="phone-outgoing" class="service-icon"></i>
+                        <h3>Outbound Call System</h3>
+                        <p>Speech-synthesized voice bots running outbound campaigns for follow-up loops and leads surveys.</p>
+                    </div>
+
+                    <!-- Service 7 -->
+                    <div class="service-card glass-card" data-service-category="workflow">
+                        <i data-lucide="link" class="service-icon"></i>
+                        <h3>CRM Integration</h3>
+                        <p>Connect automations and voice handlers directly into your Hubspot, Salesforce, or GoHighLevel pipelines.</p>
+                    </div>
+
+                    <!-- Service 8 -->
+                    <div class="service-card glass-card" data-service-category="workflow">
+                        <i data-lucide="calendar" class="service-icon"></i>
+                        <h3>Appointment Booking AI System</h3>
+                        <p>Eliminate front-desk overhead with calendar integrations checking free slots and booking appointments.</p>
+                    </div>
+
+                    <!-- Service 9 -->
+                    <div class="service-card glass-card" data-service-category="workflow">
+                        <i data-lucide="mail" class="service-icon"></i>
+                        <h3>Email & Reminder System</h3>
+                        <p>Multi-channel sequence campaigns sending confirmations, reminders, and follow-ups to maximize check-in rates.</p>
+                    </div>
+
+                    <!-- Service 10 -->
+                    <div class="service-card glass-card" data-service-category="rag">
+                        <i data-lucide="file-text" class="service-icon"></i>
+                        <h3>Custom RAG Development</h3>
+                        <p>Contextual AI agents query-answering strictly from your company's PDFs, docs, and internal wiki logs.</p>
+                    </div>
+
+                    <!-- Service 11 -->
+                    <div class="service-card glass-card" data-service-category="rag">
+                        <i data-lucide="shield-check" class="service-icon"></i>
+                        <h3>RAG Chatbot Development</h3>
+                        <p>Retrieval-Augmented bots optimized with custom schemas for enterprise-grade response validation.</p>
+                    </div>
+
+                    <!-- Service 12 -->
+                    <div class="service-card glass-card" data-service-category="rag">
+                        <i data-lucide="mic" class="service-icon"></i>
+                        <h3>RAG Voice Agent</h3>
+                        <p>Voice AI combined with your company knowledge base for intelligent conversations.</p>
+                    </div>
+
+                    <!-- Service 13 -->
+                    <div class="service-card glass-card" data-service-category="workflow">
+                        <i data-lucide="search" class="service-icon"></i>
+                        <h3>Page Automation Agent</h3>
+                        <p>Bots monitoring page inputs, scraping dashboard data, or filling structural templates automatically.</p>
+                    </div>
+
+                    <!-- Service 14 -->
+                    <div class="service-card glass-card" data-service-category="workflow">
+                        <i data-lucide="inbox" class="service-icon"></i>
+                        <h3>Email Automation Agent</h3>
+                        <p>AI agent reading incoming inboxes, categorizing queries, drafting responses, and forwarding urgent tickets.</p>
+                    </div>
+
+                    <!-- Service 15 -->
+                    <div class="service-card glass-card" data-service-category="workflow">
+                        <i data-lucide="file-spreadsheet" class="service-icon"></i>
+                        <h3>AI Invoice Automation</h3>
+                        <p>Automate incoming bills auditing by parsing lines, matching records, and sending items to payment apps.</p>
+                    </div>
+
+                    <!-- Service 16 -->
+                    <div class="service-card glass-card" data-service-category="rag">
+                        <i data-lucide="bot" class="service-icon"></i>
+                        <h3>Custom Agent Development</h3>
+                        <p>Bespoke AI system models fitted with long-term memory logs and action-execution tools custom for you.</p>
+                    </div>
+                </div>
+
+                <!-- Custom Scopes CTA -->
+                <div class="services-custom-cta glass-card">
+                    <h4>Don't see exactly what you need?</h4>
+                    <p>I build custom — tell me your requirement and I'll scope it for you.</p>
+                    <a href="https://wa.me/8801402407620?text=Hi%20Tahmid,%20I%20have%20a%20custom%20automation%20requirement%20I'd%20like%20to%20discuss." target="_blank" rel="noopener" class="btn btn-primary hover-magnetic">
+                        Discuss Your Project <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Testimonials Section -->
+        <section class="testimonials-section section-padding" id="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">08 / CLIENT REVIEWS</span>
+                    <h2 class="section-title">What Clients Say</h2>
+                </div>
+                
+                <div class="testimonials-grid reveal-fade">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card glass-card">
+                        <div class="quote-symbol">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 .75 1 2 1zm12 0c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 .75 1 2 1z"/></svg>
+                        </div>
+                        <p class="testimonial-quote">
+                            "Tahmid didn't just build a chatbot; he completely restructured how we handle client intake. Our operational overhead dropped instantly."
+                        </p>
+                        <div class="testimonial-author">
+                            <span class="author-name">Healthcare Client</span>
+                            <span class="author-meta">Clinic Administrator</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card glass-card">
+                        <div class="quote-symbol">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 .75 1 2 1zm12 0c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 .75 1 2 1z"/></svg>
+                        </div>
+                        <p class="testimonial-quote">
+                            "The inventory sync automation has completely cut out manual catalog management errors. Stock levels update within minutes automatically."
+                        </p>
+                        <div class="testimonial-author">
+                            <span class="author-name">E-commerce Client</span>
+                            <span class="author-meta">Shopify Brand Owner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section - Clean Direct links, Form Removed -->
+        <section class="contact-section section-padding" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">09 / CONTACT</span>
+                    <h2 class="section-title">Let's Build Something Intelligent</h2>
+                    <p class="section-intro-text">
+                        Got a project? An automation problem? Just want to explore? I reply fast.
+                    </p>
+                </div>
+                
+                <div class="contact-card-direct glass-card">
+                    <div class="contact-card-header">
+                        <h3>Connect with Tahmid</h3>
+                        <span class="badge-tag"><span class="pulsing-dot"></span> Currently accepting new projects</span>
+                    </div>
+                    
+                    <div class="contact-info-list">
+                        <a href="mailto:tahmidmirja25@gmail.com" class="contact-info-item hover-magnetic reveal-fade" id="contact-email-link">
+                            <div class="contact-item-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            </div>
+                            <div class="contact-item-label">
+                                <span>Direct Email</span>
+                                <strong>tahmidmirja25@gmail.com</strong>
+                            </div>
+                            <button class="contact-copy-btn" data-copy="tahmidmirja25@gmail.com" aria-label="Copy Email" title="Copy Email">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="copy-icon lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="check-icon hidden lucide lucide-check"><polyline points="20 6 9 17 4 12"/></svg>
+                            </button>
+                        </a>
+                        
+                        <a href="tel:+8801402407620" class="contact-info-item hover-magnetic reveal-fade" id="contact-phone-link">
+                            <div class="contact-item-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div class="contact-item-label">
+                                <span>Call / Phone</span>
+                                <strong>01402407620</strong>
+                            </div>
+                            <button class="contact-copy-btn" data-copy="01402407620" aria-label="Copy Phone" title="Copy Phone">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="copy-icon lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="check-icon hidden lucide lucide-check"><polyline points="20 6 9 17 4 12"/></svg>
+                            </button>
+                        </a>
+                        
+                        <a href="https://wa.me/8801402407620?text=Hi%20Tahmid,%20I'd%20like%20to%20discuss%20an%20automation%20project%20for%20my%20business." target="_blank" rel="noopener" class="contact-info-item hover-magnetic reveal-fade">
+                            <div class="contact-item-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            </div>
+                            <div class="contact-item-label">
+                                <span>WhatsApp Chat</span>
+                                <strong>01402407620 (Start Chat)</strong>
+                            </div>
+                            <button class="contact-copy-btn" data-copy="01402407620" aria-label="Copy WhatsApp Number" title="Copy WhatsApp Number">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="copy-icon lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="check-icon hidden lucide lucide-check"><polyline points="20 6 9 17 4 12"/></svg>
+                            </button>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/tahmidmirja/" target="_blank" rel="noopener" class="contact-info-item hover-magnetic reveal-fade">
+                            <div class="contact-item-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                            </div>
+                            <div class="contact-item-label">
+                                <span>LinkedIn Profile</span>
+                                <strong>linkedin.com/in/tahmidmirja</strong>
+                            </div>
+                            <button class="contact-copy-btn" data-copy="https://www.linkedin.com/in/tahmidmirja/" aria-label="Copy LinkedIn URL" title="Copy LinkedIn URL">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="copy-icon lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="check-icon hidden lucide lucide-check"><polyline points="20 6 9 17 4 12"/></svg>
+                            </button>
+                        </a>
+
+                        <a href="https://github.com/TahmidMirja" target="_blank" rel="noopener" class="contact-info-item hover-magnetic reveal-fade">
+                            <div class="contact-item-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                            </div>
+                            <div class="contact-item-label">
+                                <span>GitHub Repository</span>
+                                <strong>github.com/TahmidMirja</strong>
+                            </div>
+                            <button class="contact-copy-btn" data-copy="https://github.com/TahmidMirja" aria-label="Copy GitHub URL" title="Copy GitHub URL">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="copy-icon lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="check-icon hidden lucide lucide-check"><polyline points="20 6 9 17 4 12"/></svg>
+                            </button>
+                        </a>
+                    </div>
+                    </div>
+                    
+                    <div class="contact-card-actions">
+                        <a href="https://wa.me/8801402407620?text=Hi%20Tahmid,%20I'd%20like%20to%20book%20a%20free%2015-minute%20automation%20consultation%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-submit hover-magnetic">
+                            Request Free Automation Proposal <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        </a>
+                        
+
+                    </div>
+                    
+                    <div class="contact-meta-footer">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Typical response time: under 24 hours</span>
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Works with clients worldwide</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-copyright">&copy; 2026 Tahmid Mirja. All rights reserved.</p>
+            <p class="footer-tagline">Automating the Future, One Agent at a Time</p>
+            <div class="footer-socials">
+                <a href="https://github.com/TahmidMirja" target="_blank" rel="noopener" class="social-link hover-magnetic" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/tahmidmirja/" target="_blank" rel="noopener" class="social-link hover-magnetic" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="mailto:tahmidmirja25@gmail.com" class="social-link hover-magnetic" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
