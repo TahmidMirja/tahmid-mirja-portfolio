@@ -1836,17 +1836,17 @@ body.cursor-hovering .custom-cursor-outline {
 
 /* Explanation layout */
 .blueprint-explanation-container {
-    padding: 2.5rem;
+    padding: 2rem;
     margin-top: 2rem;
 }
 
 .blueprint-explanation-header {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 1.5rem;
+    gap: 8px;
+    margin-bottom: 1.25rem;
     border-bottom: 1px solid var(--border);
-    padding-bottom: 1rem;
+    padding-bottom: 0.75rem;
 }
 
 .blueprint-explanation-header svg {
@@ -1854,26 +1854,54 @@ body.cursor-hovering .custom-cursor-outline {
 }
 
 .blueprint-explanation-header h3 {
-    font-size: 1.35rem;
+    font-size: 1.15rem;
     color: var(--text-primary);
+    font-family: var(--font-heading);
 }
 
 .blueprint-explanation-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
-.explanation-col h4 {
-    font-size: 0.95rem;
+.explanation-col-new {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: all var(--transition-fast);
+}
+
+.explanation-col-new:hover {
+    border-color: var(--accent);
+    background: var(--surface);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.step-num-tag {
+    font-size: 0.65rem;
+    font-weight: 800;
     color: var(--accent);
-    margin-bottom: 0.75rem;
+    font-family: var(--font-heading);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.explanation-col-new h4 {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 700;
     font-family: var(--font-heading);
 }
 
-.explanation-col p {
-    font-size: 0.88rem;
-    line-height: 1.6;
+.explanation-col-new p {
+    font-size: 0.8rem;
+    line-height: 1.5;
     color: var(--text-secondary);
 }
 
