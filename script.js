@@ -365,50 +365,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!spec) return {};
         const params = { ...spec.params };
 
-        const llmModelEl = document.getElementById('config-llm-model');
-        const selectedModel = llmModelEl ? llmModelEl.value : 'gpt-4.1-mini';
+        const selectedModel = 'gpt-4o';
 
         if (nodeKey === 'classifier') {
             params['Language Model'] = `${selectedModel} (OpenAI Chat Model)`;
         } else if (nodeKey === 'rag-agent' || nodeKey === 'lead-agent') {
             params['Language Model'] = selectedModel;
         } else if (nodeKey === 'failsafe') {
-            const isWhatsapp = document.getElementById('config-toggle-whatsapp')?.classList.contains('active');
-            const isEmail = document.getElementById('config-toggle-email')?.classList.contains('active');
-            const platforms = [];
-            if (isWhatsapp) platforms.push('WhatsApp Alert (Twilio API)');
-            if (isEmail) platforms.push('Email Alert (Gmail Dispatch)');
-            platforms.push('Telegram Channel'); // Telegram always on
+            const platforms = [
+                'WhatsApp Alert (Twilio API)',
+                'Email Alert (Gmail Dispatch)',
+                'Telegram Channel'
+            ];
             params['Alert Platforms'] = platforms.join(', ');
         }
         return params;
-    }
-
-    // Bind Parameter Config Controls
-    const llmSelector = document.getElementById('config-llm-model');
-    const toggleWhatsappBtn = document.getElementById('config-toggle-whatsapp');
-    const toggleEmailBtn = document.getElementById('config-toggle-email');
-
-    if (llmSelector) {
-        llmSelector.addEventListener('change', (e) => {
-            logToConsole(`[SYSTEM] Language Model parameter updated to: <strong>${e.target.value}</strong>`, 'system');
-        });
-    }
-
-    if (toggleWhatsappBtn) {
-        toggleWhatsappBtn.addEventListener('click', () => {
-            toggleWhatsappBtn.classList.toggle('active');
-            const active = toggleWhatsappBtn.classList.contains('active');
-            logToConsole(`[SYSTEM] WhatsApp alerts <strong>${active ? 'ENABLED' : 'DISABLED'}</strong>.`, active ? 'success' : 'system');
-        });
-    }
-
-    if (toggleEmailBtn) {
-        toggleEmailBtn.addEventListener('click', () => {
-            toggleEmailBtn.classList.toggle('active');
-            const active = toggleEmailBtn.classList.contains('active');
-            logToConsole(`[SYSTEM] Email alerts <strong>${active ? 'ENABLED' : 'DISABLED'}</strong>.`, active ? 'success' : 'system');
-        });
     }
 
     // Inspector events on hover
@@ -541,9 +512,16 @@ document.addEventListener('DOMContentLoaded', () => {
             pathGlow.setAttribute('d', dPath);
             pathGlow.setAttribute('class', 'wire-glow');
             pathGlow.setAttribute('id', conn.id);
+
+            // Create SVG particle overlay path (for white dot flow animation)
+            const pathParticle = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            pathParticle.setAttribute('d', dPath);
+            pathParticle.setAttribute('class', 'wire-particle');
+            pathParticle.setAttribute('id', `particle-${conn.id}`);
             
             svgConnections.appendChild(pathBase);
             svgConnections.appendChild(pathGlow);
+            svgConnections.appendChild(pathParticle);
         });
     }
 
@@ -562,6 +540,9 @@ document.addEventListener('DOMContentLoaded', () => {
             w.className = 'wire-glow'; // reset classes
             w.classList.remove('wire-active', 'wire-error-active', 'wire-failsafe-active');
         });
+        document.querySelectorAll('.wire-particle').forEach(p => {
+            p.classList.remove('particle-active');
+        });
     }
 
     function setWireActive(id, state = 'active') {
@@ -574,6 +555,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (state === 'failsafe') {
                 wire.classList.add('wire-failsafe-active');
             }
+        }
+        const particle = document.getElementById(`particle-${id}`);
+        if (particle) {
+            particle.classList.add('particle-active');
         }
     }
 
@@ -623,7 +608,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Simulation 1: Chat Support Flow
     function executeChatSimulation() {
-        const model = document.getElementById('config-llm-model')?.value || 'gpt-4.1-mini';
+        const model = 'gpt-4o';
         
         logToConsole(`[Trigger] Inbound support request initialized from Website widget.`, 'trigger');
         setTimeout(() => {
@@ -678,7 +663,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Simulation 2: Business Partnership Lead Flow
     function executeCollabSimulation() {
-        const model = document.getElementById('config-llm-model')?.value || 'gpt-4.1-mini';
+        const model = 'gpt-4o';
         
         logToConsole(`[Trigger] Inbound webhook received from Business Lead form.`, 'trigger');
         setTimeout(() => {
@@ -753,9 +738,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Simulation 4: Error Fail-Safe Watchdog Flow
     function executeErrorSimulation() {
-        const model = document.getElementById('config-llm-model')?.value || 'gpt-4.1-mini';
-        const isWhatsapp = document.getElementById('config-toggle-whatsapp')?.classList.contains('active');
-        const isEmail = document.getElementById('config-toggle-email')?.classList.contains('active');
+        const model = 'gpt-4o';
+        const isWhatsapp = true;
+        const isEmail = true;
 
         logToConsole(`[Trigger] Scheduled healthcheck watchdog tick.`, 'trigger');
         setTimeout(() => {
