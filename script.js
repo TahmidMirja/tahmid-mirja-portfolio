@@ -920,46 +920,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightbox = document.getElementById('showcase-lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxTitle = document.getElementById('lightbox-title');
-    const lightboxDesc = document.getElementById('lightbox-desc');
     const lightboxClose = document.getElementById('lightbox-close');
 
-    // 22 remaining gallery images
+    // 22 remaining gallery images (small workflows)
     const galleryImages = [
-        { file: "Screenshot 2026-05-30 131056.webp", title: "API Endpoint Webhook Receiver", desc: "Listens for inbound webhooks and classifies request parameters." },
-        { file: "Screenshot 2026-05-30 131115.webp", title: "Google Sheets Data Syncer", desc: "Pushes raw data entries to Google Sheets for business reporting." },
-        { file: "Screenshot 2026-05-30 131136.webp", title: "Slack Incident Notifier", desc: "Sends critical system logs and warnings directly to private Slack channels." },
-        { file: "Screenshot 2026-05-30 131154.webp", title: "Stripe Payment Webhook Handler", desc: "Updates user subscriptions in the database automatically on Stripe events." },
-        { file: "Screenshot 2026-05-30 131205.webp", title: "PDF Invoice Parser & OCR", desc: "Extracts line items from invoices and validates totals securely." },
-        { file: "Screenshot 2026-05-30 131220.webp", title: "Hubspot Lead Synchronizer", desc: "Automatically matches website leads with existing Hubspot CRM contacts." },
-        { file: "Screenshot 2026-05-30 131227.webp", title: "Daily Sales Report Generator", desc: "Aggregates revenue metrics and emails a daily executive summary." },
-        { file: "Screenshot 2026-05-30 131235.webp", title: "Customer Onboarding Sequence", desc: "Triggers welcome emails and schedules onboarding calls in CRM." },
-        { file: "Screenshot 2026-05-30 131243.webp", title: "OpenAI Text Sentiment Classifier", desc: "Analyzes feedback text and marks negative tickets for human follow-up." },
-        { file: "Screenshot 2026-05-30 131250.webp", title: "Pinecone Vector Upserter", desc: "Converts documentation text into vectors and pushes them to database indices." },
-        { file: "Screenshot 2026-05-30 131259.webp", title: "Dynamic Calendar Scheduler", desc: "Checks Cal.com availability and reserves custom meeting slots dynamically." },
-        { file: "Screenshot 2026-05-30 131308.webp", title: "AI Email Draft Assistant", desc: "Drafts personalized replies to customer support emails automatically using LLMs." },
-        { file: "Screenshot 2026-05-30 131315.webp", title: "Backup Sync to AWS S3", desc: "Compresses log databases and pushes them to secure cloud storage." },
-        { file: "Screenshot 2026-05-30 131329.webp", title: "Database Cleanup Cron Job", desc: "Periodically clears expired tokens and temporary sessions automatically." },
-        { file: "Screenshot 2026-05-30 131339.webp", title: "ActiveCampaign Tag Appender", desc: "Appends lifecycle tags to marketing contacts based on user actions." },
-        { file: "Screenshot 2026-05-30 131348.webp", title: "Multi-Region API Router", desc: "Routes client API requests to the nearest server region automatically." },
-        { file: "Screenshot 2026-05-30 131355.webp", title: "Telegram Notification Dispatcher", desc: "Pushes system health stats and custom alerts to private admin channels." },
-        { file: "Screenshot 2026-05-30 131409.webp", title: "CSV Data Import Validator", desc: "Parses uploaded customer files and flags structural format errors before write." },
-        { file: "Screenshot 2026-05-30 131417.webp", title: "AI-Powered Lead Enrichment", desc: "Scrapes public profiles to enrich contact entries with business details." },
-        { file: "Screenshot 2026-05-30 131425.webp", title: "Weekly Metrics Aggregator", desc: "Calculates weekly growth percentages and alerts slack channels." },
-        { file: "Screenshot 2026-05-30 131430.webp", title: "AirTable CRM Sync Engine", desc: "Syncs leads between dynamic AirTable boards and core DB systems." },
-        { file: "Screenshot 2026-05-30 131437.webp", title: "Multi-Language Translating Agent", desc: "Detects query language and translates text for AI LLM processing." }
+        "Screenshot 2026-05-30 131056.webp",
+        "Screenshot 2026-05-30 131115.webp",
+        "Screenshot 2026-05-30 131136.webp",
+        "Screenshot 2026-05-30 131154.webp",
+        "Screenshot 2026-05-30 131205.webp",
+        "Screenshot 2026-05-30 131220.webp",
+        "Screenshot 2026-05-30 131227.webp",
+        "Screenshot 2026-05-30 131235.webp",
+        "Screenshot 2026-05-30 131243.webp",
+        "Screenshot 2026-05-30 131250.webp",
+        "Screenshot 2026-05-30 131259.webp",
+        "Screenshot 2026-05-30 131308.webp",
+        "Screenshot 2026-05-30 131315.webp",
+        "Screenshot 2026-05-30 131329.webp",
+        "Screenshot 2026-05-30 131339.webp",
+        "Screenshot 2026-05-30 131348.webp",
+        "Screenshot 2026-05-30 131355.webp",
+        "Screenshot 2026-05-30 131409.webp",
+        "Screenshot 2026-05-30 131417.webp",
+        "Screenshot 2026-05-30 131425.webp",
+        "Screenshot 2026-05-30 131430.webp",
+        "Screenshot 2026-05-30 131437.webp"
     ];
 
     // Inject thumbnails
     if (thumbnailGrid) {
-        galleryImages.forEach(img => {
+        galleryImages.forEach((file, index) => {
+            const projectTitle = `Project #${index + 1}`;
             const thumbCard = document.createElement('div');
             thumbCard.className = 'showcase-thumbnail-card';
-            thumbCard.setAttribute('data-src', `showcase/${img.file}`);
-            thumbCard.setAttribute('data-title', img.title);
-            thumbCard.setAttribute('data-desc', img.desc);
+            thumbCard.setAttribute('data-src', `showcase/${file}`);
+            thumbCard.setAttribute('data-title', projectTitle);
 
             thumbCard.innerHTML = `
-                <img src="showcase/${img.file}" class="showcase-thumb-img" alt="${img.title}" loading="lazy">
+                <img src="showcase/${file}" class="showcase-thumb-img" alt="${projectTitle}" loading="lazy">
                 <div class="thumb-hover-overlay">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zoom-in"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
                 </div>
@@ -974,11 +973,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Lightbox Handlers
-    function openLightbox(src, title, desc) {
-        if (!lightbox || !lightboxImg || !lightboxTitle || !lightboxDesc) return;
+    function openLightbox(src, title) {
+        if (!lightbox || !lightboxImg || !lightboxTitle) return;
         lightboxImg.src = src;
         lightboxTitle.textContent = title;
-        lightboxDesc.textContent = desc;
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden'; // Lock background scroll
     }
@@ -998,8 +996,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('click', () => {
             const src = card.getAttribute('data-src');
             const title = card.getAttribute('data-title');
-            const desc = card.getAttribute('data-desc');
-            openLightbox(src, title, desc);
+            openLightbox(src, title);
         });
     });
 
@@ -1010,8 +1007,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (card) {
                 const src = card.getAttribute('data-src');
                 const title = card.getAttribute('data-title');
-                const desc = card.getAttribute('data-desc');
-                openLightbox(src, title, desc);
+                openLightbox(src, title);
             }
         });
     }
