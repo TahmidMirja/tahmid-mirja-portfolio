@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahmid Mirja | Solutions & System Blueprints</title>
+    <meta name="description" content="Explore custom workflow automation services and interactive system blueprints by Tahmid Mirja, AI Agent Developer & Automation Specialist.">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Outfit:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dark-mode">
+
+    <!-- Custom Cursor elements -->
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+    <div class="custom-cursor-outline" id="cursor-outline"></div>
+
+    <!-- Header / Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html#home" class="nav-logo" id="nav-logo">
+                TM<span>_</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#skills" class="nav-link">Skills</a>
+                
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-toggle">
+                        Work <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="work.html#showcase" class="nav-dropdown-item highlight-accent">Showcase</a>
+                        <a href="work.html#roi" class="nav-dropdown-item">ROI Metrics</a>
+                        <a href="work.html#projects" class="nav-dropdown-item">Projects</a>
+                        <a href="work.html#testimonials" class="nav-dropdown-item">Reviews</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-toggle active">
+                        Solutions <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="solutions.html#services" class="nav-dropdown-item">Services</a>
+                        <a href="solutions.html#architecture" class="nav-dropdown-item">Blueprints</a>
+                    </div>
+                </div>
+                
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="https://wa.me/8801402407620?text=Hi%20Tahmid,%20I'd%20like%20to%20discuss%20an%20automation%20project%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary nav-cta-btn">
+                    Hire Me <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="nav-btn-icon mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Mobile Menu">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                    <i data-lucide="x" class="close-icon hidden"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="margin-top: var(--header-height);">
+        
+        <!-- Services Section -->
+        <section class="services-section section-padding" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">07 / SOLUTIONS</span>
+                    <h2 class="section-title">What I Can Build For You</h2>
+                    <p class="section-intro-text">You need a solution. I build it. Custom, fast, and production-ready.</p>
+                    <p class="services-sub-intro">Every business has repetitive work that shouldn’t require human time. Tell me yours — I’ll automate it with AI.</p>
+                </div>
+                
+                <!-- Filters -->
+                <div class="services-filters">
+                    <button class="service-filter-btn active" data-service-cat="all">All Solutions</button>
+                    <button class="service-filter-btn" data-service-cat="conversational">Chatbots & Voice AI</button>
+                    <button class="service-filter-btn" data-service-cat="workflow">Workflow & CRM</button>
+                    <button class="service-filter-btn" data-service-cat="rag">RAG & Custom Agents</button>
+                </div>
+                
+                <!-- Services Grid -->
+                <div class="services-grid reveal-fade" id="services-grid">
+                    
+                    <!-- Service 1 -->
+                    <div class="service-card glass-card" data-service-category="conversational">
+                        <i data-lucide="message-square" class="service-icon"></i>
+                        <h3>Website Chatbot</h3>
+                        <p>A 24/7 live chatbot trained directly on your custom knowledge base to provide instant, highly accurate answers without database load, qualify leads, and notify you of hot opportunities.</p>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="service-card glass-card" data-service-category="conversational">
+                        <i data-lucide="message-circle" class="service-icon"></i>
+                        <h3>WhatsApp AI Automation</h3>
+                        <p>Automate customer messages on WhatsApp using your custom knowledge base to answer queries instantly, check availability, and engage clients 24/7.</p>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="service-card glass-card" data-service-category="conversational">
+                        <i data-lucide="facebook" class="service-icon"></i>
+                        <h3>Messenger AI Automation</h3>
+                        <p>Automate Facebook Messenger inquiries with smart conversational logic pulling answers directly from your custom knowledge base.</p>
+                    </div>
+ 
+                    <!-- Service 4 -->
+                    <div class="service-card glass-card" data-service-category="conversational">
+                        <i data-lucide="instagram" class="service-icon"></i>
+                        <h3>Instagram DM Automation</h3>
+                        <p>Instantly reply to Instagram DMs, comments, and mentions using your knowledge base to capture interest and drive conversions.</p>
+                    </div>
+ 
+                    <!-- Service 5 -->
+                    <div class="service-card glass-card" data-service-category="conversational">
+                        <i data-lucide="phone-incoming" class="service-icon"></i>
+                        <h3>AI Inbound Calls</h3>
+                        <p>AI voice agents that answer inbound calls using your custom knowledge base. If they encounter questions they can't answer or if human help is needed, they smoothly escalate and inform you.</p>
+                    </div>
+ 
+                    <!-- Service 6 -->
+                    <div class="service-card glass-card" data-service-category="conversational">
+                        <i data-lucide="phone-outgoing" class="service-icon"></i>
+                        <h3>Outbound Call System</h3>
+                        <p>Intelligent outbound voice systems that call prospects, ask/answer questions from your database or knowledge base, handle replies, and instantly flag hot leads for human follow-up.</p>
+                    </div>
+ 
+                    <!-- Service 7 -->
+                    <div class="service-card glass-card" data-service-category="workflow">
+                        <i data-lucide="users" class="service-icon"></i>
+                        <h3>CRM Management & Automation</h3>
+                        <p>A fully automated CRM manager that syncs leads, updates pipeline stages, tracks sales activity, and coordinates client follow-ups across HubSpot, Salesforce, or custom platforms.</p>
+                    </div>
+
+                    <!-- Service 8 (New: AI Business Operations Hub) -->
+                    <div class="service-card glass-card" data-service-category="workflow">
+                        <i data-lucide="layout-dashboard" class="service-icon"></i>
+                        <h3>AI Business Operations Hub</h3>
+                        <p>A unified command center for your entire company. Manage CRM data, sales activity, employee tasks, pending invoices, outstanding dues, and auto-generate monthly/yearly financial summary reports in one place.</p>
+                    </div>
+ 
+                    <!-- Service 9 -->
+                    <div class="service-card glass-card" data-service-category="workflow">
+                        <i data-lucide="calendar" class="service-icon"></i>
+                        <h3>Appointment Booking AI System</h3>
+                        <p>Seamless booking system that allows clients to schedule appointments directly through your website widgets or inside chatbot conversation threads without manual input.</p>
+                    </div>
+ 
+                    <!-- Service 10 -->
+                    <div class="service-card glass-card" data-service-category="workflow">
+                        <i data-lucide="mail" class="service-icon"></i>
+                        <h3>Email & Reminder System</h3>
+                        <p>Automated multi-channel sequence campaigns that send appointment confirmations, follow-ups, and email reminders to maximize customer attendance.</p>
+                    </div>
+ 
+                    <!-- Service 11 -->
+                    <div class="service-card glass-card" data-service-category="rag">
+                        <i data-lucide="file-text" class="service-icon"></i>
+                        <h3>Custom RAG Development</h3>
+                        <p>Contextual AI agents query-answering strictly from your company's PDFs, docs, and internal wiki logs.</p>
+                    </div>
+ 
+                    <!-- Service 12 -->
+                    <div class="service-card glass-card" data-service-category="rag">
+                        <i data-lucide="shield-check" class="service-icon"></i>
+                        <h3>RAG Chatbot Development</h3>
+                        <p>Retrieval-Augmented bots optimized with custom schemas for enterprise-grade response validation.</p>
+                    </div>
+ 
+                    <!-- Service 13 -->
+                    <div class="service-card glass-card" data-service-category="workflow">
+                        <i data-lucide="send" class="service-icon"></i>
+                        <h3>Social Media AI Automation</h3>
+                        <p>Automate your social pages. The agent researches relevant topics, drafts engaging post text, designs social media images, and queues them up for your review and one-click human approval before posting.</p>
+                    </div>
+ 
+                    <!-- Service 14 -->
+                    <div class="service-card glass-card" data-service-category="workflow">
+                        <i data-lucide="inbox" class="service-icon"></i>
+                        <h3>AI Email Organizer & Automation</h3>
+                        <p>Read incoming emails, auto-categorize queries, draft responses, and send smart replies to leads instantly, while forwarding complex messages for human review.</p>
+                    </div>
+ 
+                    <!-- Service 15 -->
+                    <div class="service-card glass-card" data-service-category="workflow">
+                        <i data-lucide="file-spreadsheet" class="service-icon"></i>
+                        <h3>AI Invoice Automation</h3>
+                        <p>Automate incoming bills auditing by parsing lines, matching records, generating invoices, and syncing transaction data to accounting software.</p>
+                    </div>
+ 
+                    <!-- Service 16 -->
+                    <div class="service-card glass-card" data-service-category="rag">
+                        <i data-lucide="bot" class="service-icon"></i>
+                        <h3>Custom AI Agent & Workflow Development</h3>
+                        <p>আপনার ব্যবসায়িক প্রয়োজন অনুযায়ী কাস্টম এআই অটোমেশন এবং ইন্টেলিজেন্ট এআই এজেন্ট বানিয়ে নিন আমাদের থেকে। Get bespoke AI agents and custom workflow automations designed, built, and deployed specifically for your unique business requirements.</p>
+                    </div>
+                </div>
+ 
+                <!-- Custom Scopes CTA -->
+                <div class="services-custom-cta glass-card">
+                    <h4>Don't see exactly what you need?</h4>
+                    <p>I build custom — tell me your requirement and I'll scope it for you.</p>
+                    <a href="https://wa.me/8801402407620?text=Hi%20Tahmid,%20I%20have%20a%20custom%20automation%20requirement%20I'd%20like%20to%20discuss." target="_blank" rel="noopener" class="btn btn-primary hover-magnetic">
+                        Discuss Your Project <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Production-Ready Architecture Blueprint (n8n Workflow Case Study) -->
+        <section class="architecture-section section-padding" id="architecture">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">06 / BLUEPRINT</span>
+                    <h2 class="section-title">n8n Intent-Based Router & Vector RAG Pipeline</h2>
+                    <p class="section-intro-text">
+                        A real n8n backend workflow designed and built by Tahmid. Try the interactive simulator below to trace how data flows through the agent system in real-time, or hover over nodes to view credentials and prompt parameters.
+                    </p>
+                </div>
+                
+                <!-- n8n Workflow Dashboard Container -->
+                <div class="n8n-dashboard glass-card reveal-fade">
+                    <!-- n8n Top Tool Menu -->
+                    <div class="n8n-top-menu">
+                        <div class="n8n-window-dots">
+                            <span class="dot-red"></span>
+                            <span class="dot-yellow"></span>
+                            <span class="dot-green"></span>
+                        </div>
+                        <div class="n8n-workflow-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-branch"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+                            <span>smart_business_router_v2.json</span>
+                        </div>
+                        <div class="n8n-controls">
+                            <span class="n8n-zoom-badge">100%</span>
+                            <span class="n8n-status-badge"><span class="pulsing-green-dot"></span> Active</span>
+                        </div>
+                    </div>
+                       <!-- Disclaimer Warning Banner -->
+                    <div class="n8n-disclaimer-banner">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="disclaimer-icon lucide lucide-alert-circle"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        <span>This is a simplified prototype demo of a single customer support agent. Production systems are <strong>100x+ more complex</strong> with multi-agent swarms, dynamic router structures, and full fail-safes.</span>
+                    </div>
+
+                    <!-- Simulator Parameter Customization Panel -->
+                    <div class="n8n-config-panel">
+                        <div class="config-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sliders"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="2" y1="14" x2="6" y2="14"/><line x1="10" y1="8" x2="14" y2="8"/><line x1="18" y1="16" x2="22" y2="16"/></svg>
+                            <span>Customize Blueprint Parameters (প্যারামিটার কাস্টমাইজেশন)</span>
+                        </div>
+                        <div class="config-inputs">
+                            <!-- LLM Dropdown Selection -->
+                            <div class="config-group">
+                                <label for="config-llm-model">🤖 Language Model:</label>
+                                <select id="config-llm-model" class="sim-select">
+                                    <option value="gpt-4.1-mini" selected>gpt-4.1-mini (Standard)</option>
+                                    <option value="gpt-4o">gpt-4o (Premium/Fast)</option>
+                                </select>
+                            </div>
+                            <!-- Alert Toggle Buttons -->
+                            <div class="config-group">
+                                <label>🚨 Alert Channels:</label>
+                                <div class="toggle-container">
+                                    <button type="button" class="config-toggle-btn active" id="config-toggle-whatsapp">
+                                        <span class="toggle-indicator"></span>
+                                        WhatsApp Alert
+                                    </button>
+                                    <button type="button" class="config-toggle-btn active" id="config-toggle-email">
+                                        <span class="toggle-indicator"></span>
+                                        Email Alert
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simulator Trigger Bar -->
+                    <div class="n8n-simulator-bar">
+                        <span class="sim-label">⚡ RUN SIMULATION:</span>
+                        <div class="sim-buttons">
+                            <button class="sim-btn btn-chat" id="sim-btn-chat">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                Customer Support Chat
+                            </button>
+                            <button class="sim-btn btn-collab" id="sim-btn-collab">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake"><path d="m11 17 2 2a1 1 0 0 0 1.4 0l4-4a1 1 0 0 0 0-1.4l-2-2"/><path d="m18 10.1 2.9-2.9a1 1 0 0 0 0-1.4l-2.6-2.6a1 1 0 0 0-1.4 0L14 6.1"/><path d="m18 19 1-1a2.8 2.8 0 1 0-4-4l-1 1"/><path d="M14 6.1 10 10.1 4 4.1a1 1 0 0 0-1.4 0L1.3 5.4a1 1 0 0 0 0 1.4L6 11.5l-4 4L1 18.2a2.8 2.8 0 1 0 4 4l2.7-2.7 4-4 4-4"/></svg>
+                                Business Lead Inquiry
+                            </button>
+                            <button class="sim-btn btn-ingest" id="sim-btn-ingest">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload-cloud"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m15 15-3-3-3 3"/></svg>
+                                Ingest PDF Document
+                            </button>
+                            <button class="sim-btn btn-error" id="sim-btn-error">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-triangle"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                System Error (Fail-Safe)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Main Canvas & Inspector Layout -->
+                    <div class="n8n-workspace">
+                        <!-- Workflow Canvas -->
+                        <div class="n8n-canvas" id="n8n-canvas">
+                            <div class="n8n-grid-pattern"></div>
+                            <svg class="n8n-svg-connections" id="n8n-svg-connections"></svg>
+                            
+                            <!-- Column 1: Triggers -->
+                            <div class="n8n-col">
+                                <div class="n8n-col-header">1. INBOUND TRIGGERS</div>
+                                
+                                <div class="blueprint-node node-purple" id="node-chat-trigger" data-node="chat-trigger">
+                                    <div class="node-tag">Trigger</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                    </div>
+                                    <h4>Chat Trigger</h4>
+                                    <p class="node-type-name">chatTrigger v1.4</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+
+                                <div class="blueprint-node node-purple" id="node-form-trigger" data-node="form-trigger">
+                                    <div class="node-tag">Trigger</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                                    </div>
+                                    <h4>Form Trigger</h4>
+                                    <p class="node-type-name">formTrigger v2.5</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+                            </div>
+
+                            <!-- Column 2: Classifiers & Extractors -->
+                            <div class="n8n-col">
+                                <div class="n8n-col-header">2. PROCESSING ENGINE</div>
+                                
+                                <div class="blueprint-node node-cyan" id="node-classifier" data-node="classifier">
+                                    <div class="node-tag">Router</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-split"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.828L3 3"/><path d="m21 3-7.828 7.828A4 4 0 0 0 12 13.7"/></svg>
+                                    </div>
+                                    <h4>Text Classifier</h4>
+                                    <p class="node-type-name">textClassifier v1.1</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+
+                                <div class="blueprint-node node-cyan" id="node-extractor" data-node="extractor">
+                                    <div class="node-tag">Extract</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                                    </div>
+                                    <h4>File Extractor</h4>
+                                    <p class="node-type-name">extractFromFile v1.1</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+                            </div>
+
+                            <!-- Column 3: LangChain Agents -->
+                            <div class="n8n-col">
+                                <div class="n8n-col-header">3. COGNITIVE AGENTS</div>
+                                
+                                <div class="blueprint-node node-orange" id="node-rag-agent" data-node="rag-agent">
+                                    <div class="node-tag">Support AI</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot"><rect width="18" height="10" x="3" y="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
+                                    </div>
+                                    <h4>Support Agent</h4>
+                                    <p class="node-type-name">langchain.agent v3.1</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+
+                                <div class="blueprint-node node-orange" id="node-lead-agent" data-node="lead-agent">
+                                    <div class="node-tag">Lead AI</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-signature"><path d="M20 19.5v.5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8.5L20 7.5V15"/><path d="M14 2v6h6"/><path d="M16.4 13.5a1.86 1.86 0 0 1 0 2.6L12 20.5 8 21.5l1-4 4.4-4.4a1.86 1.86 0 0 1 2.6 0z"/></svg>
+                                    </div>
+                                    <h4>Lead Agent</h4>
+                                    <p class="node-type-name">langchain.agent v3.1</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+                            </div>
+
+                            <!-- Column 4: End Target Outputs & Database -->
+                            <div class="n8n-col">
+                                <div class="n8n-col-header">4. DATA STORES & ACTIONS</div>
+                                
+                                <div class="blueprint-node node-emerald" id="node-pinecone-db" data-node="pinecone-db">
+                                    <div class="node-tag">Vector DB</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+                                    </div>
+                                    <h4>Pinecone Store</h4>
+                                    <p class="node-type-name">vectorStorePinecone v1.3</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+
+                                <div class="blueprint-node node-emerald" id="node-gmail" data-node="gmail">
+                                    <div class="node-tag">Gmail</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                    </div>
+                                    <h4>Gmail Dispatch</h4>
+                                    <p class="node-type-name">gmail v2.2</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+
+                                <div class="blueprint-node node-red" id="node-failsafe" data-node="failsafe">
+                                    <div class="node-tag">Fail-safe</div>
+                                    <div class="node-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12" y2="16"/></svg>
+                                    </div>
+                                    <h4>Emergency Alert</h4>
+                                    <p class="node-type-name">Global Fallback Watchdog</p>
+                                    <div class="node-status-dot"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar Node Inspector Panel -->
+                        <div class="n8n-inspector" id="n8n-inspector">
+                            <div class="inspector-header">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                                <span>Parameter Inspector</span>
+                            </div>
+                            <div class="inspector-body" id="inspector-body">
+                                <div class="inspector-placeholder">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mouse-pointer-click"><path d="m9 9 5 12 1.77-4.51L20 18l-2-4.23L22 12l-12-3Z"/><path d="M3 3v.01"/><path d="M8 3v.01"/><path d="M13 3v.01"/><path d="M18 3v.01"/><path d="M3 8v.01"/><path d="M3 13v.01"/><path d="M3 18v.01"/></svg>
+                                    <p>Hover over any node in the canvas layout to inspect its credentials, system prompts, and configuration variables.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mock WhatsApp Chat Dialog Output -->
+                        <div id="mock-popup-chat" class="mock-popup glass-card popup-chat">
+                            <div class="popup-header chat-header">
+                                <div class="user-avatar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
+                                <div class="user-info">
+                                    <span class="user-name">Customer Support AI</span>
+                                    <span class="user-status">Online (Powered by LLM)</span>
+                                </div>
+                                <button class="popup-close-btn" onclick="this.closest('.mock-popup').classList.remove('show')">&times;</button>
+                            </div>
+                            <div class="chat-body chat-body-popup">
+                                <div class="chat-bubble incoming">
+                                    <p class="message-text">Hi, how much does custom software integration cost?</p>
+                                    <span class="message-time">12:30 PM</span>
+                                </div>
+                                <div class="chat-bubble outgoing">
+                                    <p class="message-text" id="chat-outgoing-text">Hello! Our integration services vary depending on complexity. Basic API links start at $500, while multi-agent workflow systems range from $2,500 to $7,500. Can I connect you with our manager to get a precise quote?</p>
+                                    <span class="message-time">12:31 PM</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mock Slack Incident Card Output -->
+                        <div id="mock-popup-slack" class="mock-popup glass-card popup-slack">
+                            <div class="popup-header slack-header">
+                                <div class="slack-logo-mock">
+                                    <span>#</span>
+                                </div>
+                                <div class="slack-channel-info">
+                                    <span class="slack-channel-name">#incident-reports</span>
+                                    <span class="slack-app-badge">APP</span>
+                                </div>
+                                <button class="popup-close-btn" onclick="this.closest('.mock-popup').classList.remove('show')">&times;</button>
+                            </div>
+                            <div class="popup-body slack-body">
+                                <div class="slack-message">
+                                    <div class="slack-user-avatar">🤖</div>
+                                    <div class="slack-message-content">
+                                        <span class="slack-user-name">Error Watchdog App</span>
+                                        <span class="slack-timestamp">12:35 PM</span>
+                                        <div class="slack-attachment-card">
+                                            <div class="slack-alert-header">🚨 System Pipeline Exception Alert</div>
+                                            <div class="slack-alert-fields">
+                                                <div class="slack-field">
+                                                    <strong>Status:</strong> <span class="slack-badge red">CRITICAL FAILURE</span>
+                                                </div>
+                                                <div class="slack-field">
+                                                    <strong>Source:</strong> <span>Pinecone DB (vectorStorePinecone v1.3)</span>
+                                                </div>
+                                                <div class="slack-field">
+                                                    <strong>Error:</strong> <span>API rate limit exceeded. Connection refused.</span>
+                                                </div>
+                                                <div class="slack-field">
+                                                    <strong>Notifications Sent:</strong> <span id="slack-alert-channels">WhatsApp, Email, Telegram</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End of .n8n-workspace -->
+
+                    <!-- Dark Console Log Terminal -->
+                    <div class="n8n-console">
+                        <div class="console-header">
+                            <div class="console-title">
+                                <span class="console-prompt">&gt;_</span>
+                                <span>SYSTEM LOG CONSOLE</span>
+                            </div>
+                            <button class="console-clear-btn" id="console-clear-btn">Clear Logs</button>
+                        </div>
+                        <div class="console-body" id="console-body">
+                            <div class="console-line line-system">[SYSTEM] Console logs initialized. Select a simulation to run.</div>
+                        </div>
+                    </div>
+
+                </div> <!-- End of .n8n-dashboard -->
+
+                <!-- Bangla/English System Mechanism Brief Explanation -->
+                <div class="blueprint-explanation-container glass-card reveal-fade">
+                    <div class="blueprint-explanation-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        <h3>সিস্টেম ফ্লো ও কাজের মেকানিজম (Workflow Operation Details)</h3>
+                    </div>
+                    <div class="blueprint-explanation-grid">
+                        <div class="explanation-col-new">
+                            <span class="step-num-tag">01 / RAG Support</span>
+                            <h4>কাস্টমার সাপোর্ট</h4>
+                            <p>কাস্টমার প্রশ্ন করলে Classifier তা সনাক্ত করে এবং Support AI Pinecone DB থেকে সঠিক তথ্য নিয়ে নিখুঁত উত্তর দেয়।</p>
+                        </div>
+                        <div class="explanation-col-new">
+                            <span class="step-num-tag">02 / Lead Dispatch</span>
+                            <h4>বিজনেস প্রপোজাল</h4>
+                            <p>পার্টনারশিপ অফার আসলে Lead Agent ইমেইলের Subject & Body তৈরি করে Gmail এর মাধ্যমে ওনারকে সরাসরি অ্যালার্ট পাঠায়।</p>
+                        </div>
+                        <div class="explanation-col-new">
+                            <span class="step-num-tag">03 / Fail-Safe</span>
+                            <h4>ইমার্জেন্সি এরর ওয়াচডগ</h4>
+                            <p>কোনো এপিআই ফেইল করলে Watchdog স্বয়ংক্রিয়ভাবে WhatsApp ও Telegram এর মাধ্যমে ওনারকে অ্যালার্ট পাঠিয়ে রিকোয়েস্ট উদ্ধার করে।</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-copyright">&copy; 2026 Tahmid Mirja. All rights reserved.</p>
+            <p class="footer-tagline">Automating the Future, One Agent at a Time</p>
+            <div class="footer-socials">
+                <a href="https://github.com/TahmidMirja" target="_blank" rel="noopener" class="social-link hover-magnetic" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/tahmidmirja/" target="_blank" rel="noopener" class="social-link hover-magnetic" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="https://wa.me/8801402407620?text=Hi%20Tahmid,%20I'd%20like%20to%20discuss%20an%20automation%20project%20for%20my%20business." target="_blank" rel="noopener" class="social-link hover-magnetic" aria-label="WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+                </a>
+                <a href="mailto:tahmidmirja25@gmail.com" class="social-link hover-magnetic" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/8801402407620?text=Hi%20Tahmid,%20I'd%20like%20to%20discuss%20an%20automation%20project%20for%20my%20business." target="_blank" rel="noopener" class="whatsapp-float-btn" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="currentColor"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+        <span class="whatsapp-float-pulse"></span>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

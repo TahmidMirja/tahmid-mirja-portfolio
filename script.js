@@ -72,8 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mouseX = e.clientX;
             mouseY = e.clientY;
             
-            cursorDot.style.left = `${mouseX}px`;
-            cursorDot.style.top = `${mouseY}px`;
+            cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
         });
         
         const animateOutline = () => {
@@ -81,15 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
             outlineX += (mouseX - outlineX) * ease;
             outlineY += (mouseY - outlineY) * ease;
             
-            cursorOutline.style.left = `${outlineX}px`;
-            cursorOutline.style.top = `${outlineY}px`;
+            cursorOutline.style.transform = `translate3d(${outlineX}px, ${outlineY}px, 0) translate(-50%, -50%)`;
             
             requestAnimationFrame(animateOutline);
         };
         requestAnimationFrame(animateOutline);
         
         const updateHoverState = () => {
-            const interactables = document.querySelectorAll('a, button, .project-text-card, .service-card, .social-icon-btn, .training-tag, .blueprint-node, .sim-btn');
+            const interactables = document.querySelectorAll('a, button, .project-text-card, .service-card, .social-icon-btn, .training-tag, .blueprint-node, .sim-btn, .showcase-card, .showcase-thumbnail-card');
             interactables.forEach((el) => {
                 el.removeEventListener('mouseenter', addHoverClass);
                 el.removeEventListener('mouseleave', removeHoverClass);
@@ -167,12 +165,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Close Mobile menu
-    navLinks.forEach((link) => {
+    const menuCloseLinks = document.querySelectorAll('.nav-link:not(.nav-dropdown-toggle), .nav-dropdown-item');
+    menuCloseLinks.forEach((link) => {
         link.addEventListener('click', () => {
             if (navMenu) navMenu.classList.remove('active');
             if (menuIcon) menuIcon.classList.remove('hidden');
             if (closeIcon) closeIcon.classList.add('hidden');
         });
+    });
+
+    // Toggle Dropdowns on Mobile
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+        if (toggle) {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('open');
+                }
+            });
+        }
     });
     
     // Active Link Scroll Tracker
@@ -270,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Text Classifier',
             type: '@n8n/n8n-nodes-langchain.textClassifier',
             version: '1.1',
-            desc: 'Evaluates inputs using gpt-4.1-mini to classify intent into CUSTOMER_SUPPORT AI or business_team. Runs smart matching rules.',
+            desc: 'Evaluates inputs to classify intent into CUSTOMER_SUPPORT AI or business_team. Runs smart matching rules.',
             params: {
                 'Language Model': 'gpt-4.1-mini (OpenAI Chat Model)',
                 'Categories': 'CUSTOMER_SUPPORT AI (General inquiries, pricing, support) OR business_team (Partnerships, management contact, deals)',
@@ -346,6 +359,58 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Helper to evaluate dynamic params based on selector values
+    function getDynamicNodeParams(nodeKey) {
+        const spec = nodeSpecs[nodeKey];
+        if (!spec) return {};
+        const params = { ...spec.params };
+
+        const llmModelEl = document.getElementById('config-llm-model');
+        const selectedModel = llmModelEl ? llmModelEl.value : 'gpt-4.1-mini';
+
+        if (nodeKey === 'classifier') {
+            params['Language Model'] = `${selectedModel} (OpenAI Chat Model)`;
+        } else if (nodeKey === 'rag-agent' || nodeKey === 'lead-agent') {
+            params['Language Model'] = selectedModel;
+        } else if (nodeKey === 'failsafe') {
+            const isWhatsapp = document.getElementById('config-toggle-whatsapp')?.classList.contains('active');
+            const isEmail = document.getElementById('config-toggle-email')?.classList.contains('active');
+            const platforms = [];
+            if (isWhatsapp) platforms.push('WhatsApp Alert (Twilio API)');
+            if (isEmail) platforms.push('Email Alert (Gmail Dispatch)');
+            platforms.push('Telegram Channel'); // Telegram always on
+            params['Alert Platforms'] = platforms.join(', ');
+        }
+        return params;
+    }
+
+    // Bind Parameter Config Controls
+    const llmSelector = document.getElementById('config-llm-model');
+    const toggleWhatsappBtn = document.getElementById('config-toggle-whatsapp');
+    const toggleEmailBtn = document.getElementById('config-toggle-email');
+
+    if (llmSelector) {
+        llmSelector.addEventListener('change', (e) => {
+            logToConsole(`[SYSTEM] Language Model parameter updated to: <strong>${e.target.value}</strong>`, 'system');
+        });
+    }
+
+    if (toggleWhatsappBtn) {
+        toggleWhatsappBtn.addEventListener('click', () => {
+            toggleWhatsappBtn.classList.toggle('active');
+            const active = toggleWhatsappBtn.classList.contains('active');
+            logToConsole(`[SYSTEM] WhatsApp alerts <strong>${active ? 'ENABLED' : 'DISABLED'}</strong>.`, active ? 'success' : 'system');
+        });
+    }
+
+    if (toggleEmailBtn) {
+        toggleEmailBtn.addEventListener('click', () => {
+            toggleEmailBtn.classList.toggle('active');
+            const active = toggleEmailBtn.classList.contains('active');
+            logToConsole(`[SYSTEM] Email alerts <strong>${active ? 'ENABLED' : 'DISABLED'}</strong>.`, active ? 'success' : 'system');
+        });
+    }
+
     // Inspector events on hover
     nodes.forEach(node => {
         const nodeKey = node.dataset.node;
@@ -353,9 +418,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         node.addEventListener('mouseenter', () => {
             const spec = nodeSpecs[nodeKey];
+            const dynamicParams = getDynamicNodeParams(nodeKey);
             let paramsHTML = '';
             
-            for (const [key, value] of Object.entries(spec.params)) {
+            for (const [key, value] of Object.entries(dynamicParams)) {
                 paramsHTML += `
                     <div class="spec-param-group">
                         <strong>${key}</strong>
@@ -529,6 +595,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isSimulating) return;
         isSimulating = true;
 
+        // Dismiss active popups
+        document.querySelectorAll('.mock-popup').forEach(p => p.classList.remove('show'));
+
         // Toggle active states on sim triggers
         document.querySelectorAll('.sim-btn').forEach(btn => btn.classList.remove('active-run'));
         
@@ -554,118 +623,165 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Simulation 1: Chat Support Flow
     function executeChatSimulation() {
+        const model = document.getElementById('config-llm-model')?.value || 'gpt-4.1-mini';
+        
+        logToConsole(`[Trigger] Inbound support request initialized from Website widget.`, 'trigger');
         setTimeout(() => {
             setNodePulse('node-chat-trigger');
+            logToConsole(`[Trigger] Chat Trigger listener fired. Payload captured: <em>"Hi, how much does custom software integration cost?"</em>`, 'trigger');
         }, 100);
 
         setTimeout(() => {
             clearNodePulse();
             setNodePulse('node-classifier');
             setWireActive('wire-chat-classifier');
+            logToConsole(`[Classifier] Router evaluating query intent using <strong>${model}</strong>...`, 'logic');
         }, 1300);
 
         setTimeout(() => {
             clearNodePulse();
             setNodePulse('node-rag-agent');
             setWireActive('wire-classifier-rag');
+            logToConsole(`[Classifier] Intent classified as: <strong>CUSTOMER_SUPPORT</strong>. Route dispatched to Support Agent.`, 'logic');
+            logToConsole(`[Support Agent] Fetching contextual business facts. Initializing Pinecone database query...`, 'agent');
         }, 3000);
 
         setTimeout(() => {
             clearNodePulse();
             setNodePulse('node-pinecone-db');
             setWireActive('wire-rag-pinecone');
+            logToConsole(`[Pinecone Store] Executing similarity search in vector index "bongodigitalkng".`, 'db');
+            logToConsole(`[Pinecone Store] Returned 3 semantic text chunks. Simulating embedding search...`, 'db');
         }, 4500);
 
         setTimeout(() => {
             clearNodePulse();
             setNodePulse('node-rag-agent');
+            logToConsole(`[Support Agent] Injecting retrieved context into system prompt. Invoking Language Model API (<strong>${model}</strong>)...`, 'agent');
         }, 6000);
 
         setTimeout(() => {
             clearNodePulse();
             isSimulating = false;
             simBtnChat.classList.remove('active-run');
+            logToConsole(`[Support Agent] Response compiled. (LLM: <strong>${model}</strong> | Latency: 0.65s). Dispatching response to chat client...`, 'agent');
+            logToConsole(`[SYSTEM] Support Chat simulation successfully complete.`, 'success');
+            
+            // Show WhatsApp Mock Popup Chat
+            const outgoingTextEl = document.getElementById('chat-outgoing-text');
+            if (outgoingTextEl) {
+                outgoingTextEl.innerHTML = `Hello! Our integration services vary depending on complexity. Basic API links start at $500, while multi-agent workflow systems range from $2,500 to $7,500. Can I connect you with our manager to get a precise quote?<br><span style="font-size:0.58rem; opacity:0.6; display:block; margin-top:5px; border-top:1px solid rgba(255,255,255,0.1); padding-top:3px;">Generated using ${model} | System: Live</span>`;
+            }
+            document.getElementById('mock-popup-chat')?.classList.add('show');
         }, 7500);
     }
 
     // Simulation 2: Business Partnership Lead Flow
     function executeCollabSimulation() {
+        const model = document.getElementById('config-llm-model')?.value || 'gpt-4.1-mini';
+        
+        logToConsole(`[Trigger] Inbound webhook received from Business Lead form.`, 'trigger');
         setTimeout(() => {
             setNodePulse('node-chat-trigger');
+            logToConsole(`[Trigger] Form Trigger listener fired. Form Payload: <em>"B2B Partnership Inquiry from E-commerce brand"</em>`, 'trigger');
         }, 100);
 
         setTimeout(() => {
             clearNodePulse();
             setNodePulse('node-classifier');
             setWireActive('wire-chat-classifier');
+            logToConsole(`[Classifier] Router evaluating query intent using <strong>${model}</strong>...`, 'logic');
         }, 1300);
 
         setTimeout(() => {
             clearNodePulse();
             setNodePulse('node-lead-agent');
             setWireActive('wire-classifier-lead');
+            logToConsole(`[Classifier] Intent classified as: <strong>BUSINESS_TEAM</strong>. Routing to Lead Generator Agent.`, 'logic');
+            logToConsole(`[Lead Agent] Formulating structured email draft using model: <strong>${model}</strong>. Parsing payload fields...`, 'agent');
         }, 3000);
 
         setTimeout(() => {
             clearNodePulse();
             setNodePulse('node-gmail');
             setWireActive('wire-lead-gmail');
+            logToConsole(`[Gmail Dispatch] Compiled email subject: <em>"New Partnership Opportunity: E-commerce Client"</em>`, 'action');
+            logToConsole(`[Gmail Dispatch] Auto-dispatching email payload to tahmidmirja25@gmail.com...`, 'action');
         }, 4800);
 
         setTimeout(() => {
             clearNodePulse();
             isSimulating = false;
             simBtnCollab.classList.remove('active-run');
+            logToConsole(`[Gmail Dispatch] Email successfully sent. Gmail status: 200 OK.`, 'success');
+            logToConsole(`[SYSTEM] Business Lead Inquiry simulation successfully complete.`, 'success');
         }, 6500);
     }
 
     // Simulation 3: PDF Ingest Flow
     function executeIngestSimulation() {
+        logToConsole(`[Trigger] Scheduled cron or manual document upload initiated.`, 'trigger');
         setTimeout(() => {
             setNodePulse('node-form-trigger');
+            logToConsole(`[Trigger] Form Trigger listener fired. Uploaded PDF asset path: <em>"/tmp/company_rules_v3.pdf"</em>`, 'trigger');
         }, 100);
 
         setTimeout(() => {
             clearNodePulse();
             setNodePulse('node-extractor');
             setWireActive('wire-form-extractor');
+            logToConsole(`[File Extractor] Reading PDF bytes and extracting raw text formatting...`, 'logic');
+            logToConsole(`[File Extractor] Extracted 1,240 tokens. Structuring text into layout chunks.`, 'logic');
         }, 1300);
 
         setTimeout(() => {
             clearNodePulse();
             setNodePulse('node-pinecone-db');
             setWireActive('wire-extractor-pinecone');
+            logToConsole(`[Pinecone Store] Initiating vector embeddings mapping using OpenAI text-embedding-3-small...`, 'db');
+            logToConsole(`[Pinecone Store] Vectorizing chunks. Upserting 12 new vectors to index "bongodigitalkng"...`, 'db');
         }, 3000);
 
         setTimeout(() => {
             clearNodePulse();
             isSimulating = false;
             simBtnIngest.classList.remove('active-run');
+            logToConsole(`[Pinecone Store] Upsert transaction completed. 12 vectors successfully indexed.`, 'success');
+            logToConsole(`[SYSTEM] Knowledge base ingestion and vector index update complete.`, 'success');
         }, 4800);
     }
 
     // Simulation 4: Error Fail-Safe Watchdog Flow
     function executeErrorSimulation() {
+        const model = document.getElementById('config-llm-model')?.value || 'gpt-4.1-mini';
+        const isWhatsapp = document.getElementById('config-toggle-whatsapp')?.classList.contains('active');
+        const isEmail = document.getElementById('config-toggle-email')?.classList.contains('active');
+
+        logToConsole(`[Trigger] Scheduled healthcheck watchdog tick.`, 'trigger');
         setTimeout(() => {
             setNodePulse('node-chat-trigger');
+            logToConsole(`[Trigger] Healthcheck ping failed. Simulated query initiated...`, 'trigger');
         }, 100);
 
         setTimeout(() => {
             clearNodePulse();
             setNodePulse('node-classifier');
             setWireActive('wire-chat-classifier');
+            logToConsole(`[Classifier] Classifying error flow diagnostics...`, 'logic');
         }, 1200);
 
         setTimeout(() => {
             clearNodePulse();
             setNodePulse('node-rag-agent');
             setWireActive('wire-classifier-rag');
+            logToConsole(`[Support Agent] Requesting database search from Pinecone Vector Store...`, 'agent');
         }, 2500);
 
         setTimeout(() => {
             clearNodePulse();
             setNodePulse('node-pinecone-db');
             setWireActive('wire-rag-pinecone');
+            logToConsole(`[Pinecone Store] Querying vectors...`, 'db');
         }, 3800);
 
         setTimeout(() => {
@@ -673,18 +789,49 @@ document.addEventListener('DOMContentLoaded', () => {
             // Vector Store crashed
             setNodePulse('node-pinecone-db');
             setWireActive('wire-rag-pinecone', 'error');
+            logToConsole(`[Pinecone Store] ERROR: Connection timeout. Service unavailable (503 Service Unavailable).`, 'error');
         }, 4800);
 
         setTimeout(() => {
             clearNodePulse();
             setNodePulse('node-failsafe');
             setWireActive('wire-pinecone-failsafe', 'failsafe');
+            logToConsole(`[Watchdog] Intercepted CRITICAL EXCEPTION. Triggering Global Emergency Watchdog...`, 'error');
+            
+            // Check WhatsApp
+            if (isWhatsapp) {
+                logToConsole(`[Watchdog] WhatsApp Alert [ACTIVE]: Dispatching incident report to Owner via Twilio API...`, 'action');
+            } else {
+                logToConsole(`[Watchdog] WhatsApp Alert [DISABLED]: Skipping WhatsApp notification dispatch.`, 'system');
+            }
+
+            // Check Email
+            if (isEmail) {
+                logToConsole(`[Watchdog] Email Alert [ACTIVE]: Dispatching SMTP incident payload via Gmail Dispatch...`, 'action');
+            } else {
+                logToConsole(`[Watchdog] Email Alert [DISABLED]: Skipping Email notification dispatch.`, 'system');
+            }
         }, 5800);
 
         setTimeout(() => {
             clearNodePulse();
             isSimulating = false;
             simBtnError.classList.remove('active-run');
+            
+            const activeAlerts = [];
+            if (isWhatsapp) activeAlerts.push('WhatsApp');
+            if (isEmail) activeAlerts.push('Email');
+            activeAlerts.push('Telegram'); // Telegram always on
+
+            logToConsole(`[Watchdog] Incident notifications successfully dispatched to: [${activeAlerts.join(', ')}].`, 'success');
+            logToConsole(`[SYSTEM] Watchdog execution completed. System entering monitoring fallback state.`, 'success');
+
+            // Show Slack Mock Popup Card
+            const slackChannelsEl = document.getElementById('slack-alert-channels');
+            if (slackChannelsEl) {
+                slackChannelsEl.innerHTML = activeAlerts.join(', ');
+            }
+            document.getElementById('mock-popup-slack')?.classList.add('show');
         }, 7800);
     }
 
@@ -764,5 +911,146 @@ document.addEventListener('DOMContentLoaded', () => {
         revealElements.forEach(el => {
             revealObserver.observe(el);
         });
+    }
+
+    // ==========================================================================
+    // DYNAMIC SHOWCASE GALLERY & LIGHTBOX MODAL
+    // ==========================================================================
+    const thumbnailGrid = document.getElementById('showcase-thumbnail-grid');
+    const lightbox = document.getElementById('showcase-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDesc = document.getElementById('lightbox-desc');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // 22 remaining gallery images
+    const galleryImages = [
+        { file: "Screenshot 2026-05-30 131056.webp", title: "API Endpoint Webhook Receiver", desc: "Listens for inbound webhooks and classifies request parameters." },
+        { file: "Screenshot 2026-05-30 131115.webp", title: "Google Sheets Data Syncer", desc: "Pushes raw data entries to Google Sheets for business reporting." },
+        { file: "Screenshot 2026-05-30 131136.webp", title: "Slack Incident Notifier", desc: "Sends critical system logs and warnings directly to private Slack channels." },
+        { file: "Screenshot 2026-05-30 131154.webp", title: "Stripe Payment Webhook Handler", desc: "Updates user subscriptions in the database automatically on Stripe events." },
+        { file: "Screenshot 2026-05-30 131205.webp", title: "PDF Invoice Parser & OCR", desc: "Extracts line items from invoices and validates totals securely." },
+        { file: "Screenshot 2026-05-30 131220.webp", title: "Hubspot Lead Synchronizer", desc: "Automatically matches website leads with existing Hubspot CRM contacts." },
+        { file: "Screenshot 2026-05-30 131227.webp", title: "Daily Sales Report Generator", desc: "Aggregates revenue metrics and emails a daily executive summary." },
+        { file: "Screenshot 2026-05-30 131235.webp", title: "Customer Onboarding Sequence", desc: "Triggers welcome emails and schedules onboarding calls in CRM." },
+        { file: "Screenshot 2026-05-30 131243.webp", title: "OpenAI Text Sentiment Classifier", desc: "Analyzes feedback text and marks negative tickets for human follow-up." },
+        { file: "Screenshot 2026-05-30 131250.webp", title: "Pinecone Vector Upserter", desc: "Converts documentation text into vectors and pushes them to database indices." },
+        { file: "Screenshot 2026-05-30 131259.webp", title: "Dynamic Calendar Scheduler", desc: "Checks Cal.com availability and reserves custom meeting slots dynamically." },
+        { file: "Screenshot 2026-05-30 131308.webp", title: "AI Email Draft Assistant", desc: "Drafts personalized replies to customer support emails automatically using LLMs." },
+        { file: "Screenshot 2026-05-30 131315.webp", title: "Backup Sync to AWS S3", desc: "Compresses log databases and pushes them to secure cloud storage." },
+        { file: "Screenshot 2026-05-30 131329.webp", title: "Database Cleanup Cron Job", desc: "Periodically clears expired tokens and temporary sessions automatically." },
+        { file: "Screenshot 2026-05-30 131339.webp", title: "ActiveCampaign Tag Appender", desc: "Appends lifecycle tags to marketing contacts based on user actions." },
+        { file: "Screenshot 2026-05-30 131348.webp", title: "Multi-Region API Router", desc: "Routes client API requests to the nearest server region automatically." },
+        { file: "Screenshot 2026-05-30 131355.webp", title: "Telegram Notification Dispatcher", desc: "Pushes system health stats and custom alerts to private admin channels." },
+        { file: "Screenshot 2026-05-30 131409.webp", title: "CSV Data Import Validator", desc: "Parses uploaded customer files and flags structural format errors before write." },
+        { file: "Screenshot 2026-05-30 131417.webp", title: "AI-Powered Lead Enrichment", desc: "Scrapes public profiles to enrich contact entries with business details." },
+        { file: "Screenshot 2026-05-30 131425.webp", title: "Weekly Metrics Aggregator", desc: "Calculates weekly growth percentages and alerts slack channels." },
+        { file: "Screenshot 2026-05-30 131430.webp", title: "AirTable CRM Sync Engine", desc: "Syncs leads between dynamic AirTable boards and core DB systems." },
+        { file: "Screenshot 2026-05-30 131437.webp", title: "Multi-Language Translating Agent", desc: "Detects query language and translates text for AI LLM processing." }
+    ];
+
+    // Inject thumbnails
+    if (thumbnailGrid) {
+        galleryImages.forEach(img => {
+            const thumbCard = document.createElement('div');
+            thumbCard.className = 'showcase-thumbnail-card';
+            thumbCard.setAttribute('data-src', `showcase/${img.file}`);
+            thumbCard.setAttribute('data-title', img.title);
+            thumbCard.setAttribute('data-desc', img.desc);
+
+            thumbCard.innerHTML = `
+                <img src="showcase/${img.file}" class="showcase-thumb-img" alt="${img.title}" loading="lazy">
+                <div class="thumb-hover-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zoom-in"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+            `;
+            thumbnailGrid.appendChild(thumbCard);
+        });
+
+        // Initialize Lucide Icons for injected items if lucide is loaded
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }
+
+    // Lightbox Handlers
+    function openLightbox(src, title, desc) {
+        if (!lightbox || !lightboxImg || !lightboxTitle || !lightboxDesc) return;
+        lightboxImg.src = src;
+        lightboxTitle.textContent = title;
+        lightboxDesc.textContent = desc;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Lock background scroll
+    }
+
+    function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('active');
+        document.body.style.overflow = ''; // Unlock background scroll
+        setTimeout(() => {
+            if (lightboxImg) lightboxImg.src = '';
+        }, 300);
+    }
+
+    // Bind Featured Showcase cards
+    const showcaseCards = document.querySelectorAll('.showcase-card');
+    showcaseCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const src = card.getAttribute('data-src');
+            const title = card.getAttribute('data-title');
+            const desc = card.getAttribute('data-desc');
+            openLightbox(src, title, desc);
+        });
+    });
+
+    // Bind Dynamic Gallery Cards
+    if (thumbnailGrid) {
+        thumbnailGrid.addEventListener('click', (e) => {
+            const card = e.target.closest('.showcase-thumbnail-card');
+            if (card) {
+                const src = card.getAttribute('data-src');
+                const title = card.getAttribute('data-title');
+                const desc = card.getAttribute('data-desc');
+                openLightbox(src, title, desc);
+            }
+        });
+    }
+
+    // Close Actions
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        
+        // Escape key to close
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    }
+
+    // Re-bind hover interactions so custom cursor grows on showcase cards
+    if (typeof updateHoverState === 'function') {
+        updateHoverState();
+    }
+});
+
+// Handle scroll-to-hash on page redirect / load to fix dynamic layout shifts
+window.addEventListener('load', () => {
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+            // Tiny delay to let browser layouts settle completely
+            setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 150);
+        }
     }
 });
